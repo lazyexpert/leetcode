@@ -1,10 +1,11 @@
 # Algorithms progress
 | Easy | Medium | Hard |
 |:----:|:------:|:----:|
-|8     | 0      | 0    |   
+|9     | 0      | 0    |   
 
 ## Done so far
 [1. Two Sum](Arrays/1.Two_Sum/)  
+[231. Power Of Two](Maths/231.Power_Of_Two/)  
 [257. Binary Tree Paths](Trees/257.Binary_Tree_Paths/)  
 [387. First Unique Character In A String](Strings/387.First_Unique_Character_In_A_String/)  
 [448. Find All Numbers Dissapeared In Array](Arrays/448.Find_All_Numbers_Dissapeared_In_Array/)  
