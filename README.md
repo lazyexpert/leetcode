@@ -10,6 +10,7 @@
 [155. Min Stack](Stack/155.Min_Stack/)  
 [208. Implement Trie](Tree/208.Implement_Trie/)  
 [231. Power Of Two](Math/231.Power_Of_Two/)  
+[280. Wiggle Sort](Array/280.Wiggle_Sort/)  
 [326. Power Of Three](Math/326.Power_Of_Three/)  
 [257. Binary Tree Paths](Tree/257.Binary_Tree_Paths/)  
 [387. First Unique Character In A String](String/387.First_Unique_Character_In_A_String/)  
