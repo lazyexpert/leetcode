@@ -1,10 +1,11 @@
 # Algorithms progress
 | Easy | Medium | Hard |
 |:----:|:------:|:----:|
-|11    | 0      | 0    |   
+|12    | 0      | 0    |   
 
 ## Done so far
 [1. Two Sum](Arrays/1.Two_Sum/)  
+[20. Valid Parentheses](Strings/20.Valid_Parentheses/)  
 [66. Plus One](Math/66.Plus_One/)  
 [231. Power Of Two](Math/231.Power_Of_Two/)  
 [326. Power Of Three](Math/326.Power_Of_Three/)  
