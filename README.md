@@ -1,13 +1,14 @@
 # Algorithms progress
 | Easy | Medium | Hard |
 |:----:|:------:|:----:|
-|13    | 0      | 0    |   
+|13    |1       | 0    |   
 
 ## Done so far
 [1. Two Sum](Array/1.Two_Sum/)  
 [20. Valid Parentheses](String/20.Valid_Parentheses/)  
 [66. Plus One](Math/66.Plus_One/)  
 [155. Min Stack](Stack/155.Min_Stack/)  
+[208. Implement Trie](Tree/208.Implement_Trie/)  
 [231. Power Of Two](Math/231.Power_Of_Two/)  
 [326. Power Of Three](Math/326.Power_Of_Three/)  
 [257. Binary Tree Paths](Tree/257.Binary_Tree_Paths/)  
