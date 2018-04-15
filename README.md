@@ -1,7 +1,7 @@
 # Algorithms progress
 | Easy | Medium | Hard |
 |:----:|:------:|:----:|
-|14    |1       | 0    |   
+|20    |1       | 0    |   
 
 ## Done so far
 [1. Two Sum](Array/1.Two_Sum/)  
@@ -20,6 +20,7 @@
 [421. Find Maximum XOR Of Two Numbers In Array](Math/421.Find_Maximum_XOR/)  
 [448. Find All Numbers Dissapeared In Array](Array/448.Find_All_Numbers_Dissapeared_In_Array/)  
 [463. Island Perimeter](Array/463.Island_Perimeter/)  
+[535. Encode and Decode tinyURL](Complex/535.Encode_And_Decode_TinyURL/)  
 [657. Judge Route Circle](String/657.Judge_Route_Circle/)  
 [760. Find Anagram Mappings](Array/760.Find_Anagram_Mappings/)  
 [771. Jewels and Stones](String/771.Jewels_and_Stones/)  
