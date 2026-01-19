@@ -1,12 +1,13 @@
 # Algorithms progress
 | Easy | Medium | Hard |
 |:----:|:------:|:----:|
-|20    |3       | 0    |   
+|20    |4       | 0    |   
 
 ## Done so far
 [1. Two Sum](Array/1.Two_Sum/)
 [2. Add Two Numbers](Array/2.Add_Two_Numbers)
 [3. Longest Substring Without Repeating Characters](Array/3.Longest_Substring_Without_Repeating_Characters)
+[5. Longest Palindromic Substring](Array/5.Longest_Palindromic_Substring)
 [20. Valid Parentheses](String/20.Valid_Parentheses/)
 [66. Plus One](Math/66.Plus_One/)
 [155. Min Stack](Stack/155.Min_Stack/)
