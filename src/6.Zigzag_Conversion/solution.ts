@@ -1,5 +1,5 @@
 
-function convert(s: string, numRows: number): string {
+function convert6(s: string, numRows: number): string {
   if (s.length === 1 || numRows > s.length || numRows === 1) return s;
   const zigzag = new Array(numRows);
   for (let i = 0; i < numRows; i++) {
@@ -22,5 +22,5 @@ function convert(s: string, numRows: number): string {
   return zigzag.join("");
 };
 
-const convertRes = convert("PAYPALISHIRING", 3);
-console.log(convertRes);
+const convertResult = convert6("PAYPALISHIRING", 3);
+console.log(convertResult);
