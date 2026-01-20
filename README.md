@@ -9,6 +9,7 @@
 [3. Longest Subsrc Without Repeating Characters](src/3.Longest_Subsrc_Without_Repeating_Characters)
 [5. Longest Palindromic Subsrc](src/5.Longest_Palindromic_Subsrc)
 [6. Zigzag Conversion](src/6.Zigzag_Conversion)
+[8. String to Integer](src/8.String_to_Integer(atoi))
 [7. Reverse Integer](src/7.Reverse_Integer)
 [20. Valid Parentheses](src/20.Valid_Parentheses/)
 [66. Plus One](src/66.Plus_One/)
