@@ -7,6 +7,7 @@
 - [7. Reverse Integer](src/7.Reverse_Integer)
 - [8. String to Integer](src/8.String_to_Integer(atoi))
 - [11. Container With Most Water](src/11.Container_With_Most_Water)
+- [12. Integer to Roman](src/12.Integer_to_Roman)
 - [20. Valid Parentheses](src/20.Valid_Parentheses/)
 - [66. Plus One](src/66.Plus_One/)
 - [155. Min Stack](src/155.Min_Stack/)
@@ -26,6 +27,3 @@
 - [657. Judge Route Circle](src/657.Judge_Route_Circle/)
 - [760. Find Anagram Mappings](src/760.Find_Anagram_Mappings/)
 - [771. Jewels and Stones](src/771.Jewels_and_Stones/)
-
-# History
-[Completed tasks in chronological order](history.md)
