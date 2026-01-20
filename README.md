@@ -1,7 +1,7 @@
 # Algorithms progress
 | Easy | Medium | Hard |
 |:----:|:------:|:----:|
-|20    |4       | 0    |   
+|20    |5       | 0    |   
 
 ## Done so far
 [1. Two Sum](Array/1.Two_Sum/)
