@@ -1,8 +1,9 @@
 function increasingTriplet(nums: number[]): boolean {
-  let first = Number.POSITIVE_INFINITY;
-  let second = Number.POSITIVE_INFINITY;
+  let first = Number.MAX_SAFE_INTEGER;
+  let second = Number.MAX_SAFE_INTEGER;
 
-  for (const x of nums) {
+  for (let i = 0; i < nums.length; i++) {
+    const x = nums[i]
     if (x <= first) {
       first = x;
     } else if (x <= second) {
@@ -14,5 +15,3 @@ function increasingTriplet(nums: number[]): boolean {
 
   return false;
 }
-
-increasingTriplet([20,100,10,12,5,13]);
