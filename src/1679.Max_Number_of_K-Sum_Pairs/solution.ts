@@ -1,17 +1,22 @@
 function maxOperations(nums: number[], k: number): number {
   let ops = 0;
-  const lookup = new Map<number, number>();
+  nums.sort((a,b) => a - b);
 
-  for (let i = 0; i < nums.length; i++) {
-    const value = nums[i];
-    const target = k - value;
-    const oldValue = lookup.get(target) || 0; 
-    if (oldValue > 0) {
+  let i = 0;
+  let j = nums.length - 1;
+
+  while (i < j) {
+    const a = nums[i];
+    const b = nums[j];
+    const sum = a + b;
+    if (sum === k) {
       ops++;
-      lookup.set(target, oldValue - 1);
+      j--;
+      i++;
+    } else if (sum > k) {
+      j--;
     } else {
-      const old = lookup.get(value) || 0;
-      lookup.set(value, old + 1);
+      i++
     }
   }
 
