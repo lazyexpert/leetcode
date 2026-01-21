@@ -29,4 +29,5 @@
 - [657. Judge Route Circle](src/657.Judge_Route_Circle/)
 - [760. Find Anagram Mappings](src/760.Find_Anagram_Mappings/)
 - [771. Jewels and Stones](src/771.Jewels_and_Stones/)
+- [1679. Max Number of K-Sum Pairs](src/1679.Max_Number_of_K-Sum_Pairs)
 - [1768. Merge Strings Alternately](src/1768.Merge_Strings_Alternately)
