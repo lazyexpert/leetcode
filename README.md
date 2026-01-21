@@ -10,6 +10,7 @@
 - [12. Integer to Roman](src/12.Integer_to_Roman)
 - [20. Valid Parentheses](src/20.Valid_Parentheses/)
 - [66. Plus One](src/66.Plus_One/)
+- [151. Reverse Words in a String](src/151.Reverse_Words_in_a_String)
 - [155. Min Stack](src/155.Min_Stack/)
 - [208. Implement Trie](Tree/208.Implement_Trie/)
 - [231. Power Of Two](src/231.Power_Of_Two/)
