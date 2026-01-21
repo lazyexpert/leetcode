@@ -18,6 +18,7 @@
 - [280. Wiggle Sort](src/280.Wiggle_Sort/)
 - [326. Power Of Three](src/326.Power_Of_Three/)
 - [257. Binary Tree Paths](src/257.Binary_Tree_Paths/)
+- [334. Increasing Triplet Subsequence](src/334.Increasing_Triplet_Subsequence)
 - [345. Reverse Vowels](src/345.Reverse_Vowels/)
 - [387. First Unique Character In A src](src/387.First_Unique_Character_In_A_src/)
 - [389. Find The Difference](src/389.Find_The_Difference/)
