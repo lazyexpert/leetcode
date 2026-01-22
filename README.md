@@ -32,5 +32,6 @@
 - [760. Find Anagram Mappings](src/760.Find_Anagram_Mappings/)
 - [771. Jewels and Stones](src/771.Jewels_and_Stones/)
 - [1071. Greatest Common Divisor of Strings](src/1071.Greatest_Common_Divisor_of_Strings)
+- [1431. Kids With the Greatest Number of Candies](src/1431.Kids_With_the_Greatest_Number_of_Candies)
 - [1679. Max Number of K-Sum Pairs](src/1679.Max_Number_of_K-Sum_Pairs)
 - [1768. Merge Strings Alternately](src/1768.Merge_Strings_Alternately)
