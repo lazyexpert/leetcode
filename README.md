@@ -9,6 +9,7 @@
 - [11. Container With Most Water](src/11.Container_With_Most_Water)
 - [12. Integer to Roman](src/12.Integer_to_Roman)
 - [20. Valid Parentheses](src/20.Valid_Parentheses/)
+- [28. Find the Index of the First Occurrence in a String](src/28.Find_the_Index_of_the_First_Occurrence_in_a_String)
 - [66. Plus One](src/66.Plus_One/)
 - [151. Reverse Words in a String](src/151.Reverse_Words_in_a_String)
 - [155. Min Stack](src/155.Min_Stack/)
