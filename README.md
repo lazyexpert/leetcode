@@ -23,6 +23,7 @@
 - [345. Reverse Vowels](src/345.Reverse_Vowels/)
 - [387. First Unique Character In A src](src/387.First_Unique_Character_In_A_src/)
 - [389. Find The Difference](src/389.Find_The_Difference/)
+- [392. Is Subsequence](src/392.Is_Subsequence)
 - [406. Queue reconstruction by height](src/406.Queue_Reconstruction_by_Height/)
 - [421. Find Maximum XOR Of Two Numbers In src](src/421.Find_Maximum_XOR/)
 - [443. String Compression](src/443.String_Compression)
