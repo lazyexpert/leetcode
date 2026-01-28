@@ -41,3 +41,4 @@
 - [1768. Merge Strings Alternately](src/1768.Merge_Strings_Alternately)
 - [Q1. Concatenation of Array](src/Quests/Q1.Concatenation_of_Array)
 - [Q2. Shuffle the Array](src/Quests/Q2.Shuffle_the_Array)
+- [Q3. Max Consecutive Ones](src/Quests/Q3.Max_Consecutive_Ones)
