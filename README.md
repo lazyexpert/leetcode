@@ -44,3 +44,4 @@
 - [Q3. Max Consecutive Ones](src/Quests/Q3.Max_Consecutive_Ones)
 - [Q1. Set Mismatch](src/Quests/Q1.Set_Mismatch)
 - [Q2. How Many Numbers Are Smaller Than the Current Number](src/Quests/Q2.How_Many_Numbers_Are_Smaller_Than_the_Current_Number)
+- [Q3. Find All Numbers Disappeared in an Array](src/Quests/Q3.Find_All_Numbers_Disappeared_in_an_Array)
