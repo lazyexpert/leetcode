@@ -42,3 +42,4 @@
 - [Q1. Concatenation of Array](src/Quests/Q1.Concatenation_of_Array)
 - [Q2. Shuffle the Array](src/Quests/Q2.Shuffle_the_Array)
 - [Q3. Max Consecutive Ones](src/Quests/Q3.Max_Consecutive_Ones)
+- [Q1. Set Mismatch](src/Quests/Q1.Set_Mismatch)
