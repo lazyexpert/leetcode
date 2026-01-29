@@ -47,3 +47,4 @@
 - [Q3. Find All Numbers Disappeared in an Array](src/Quests/Q3.Find_All_Numbers_Disappeared_in_an_Array)
 - [Q1. Build an Array With Stack Operations](src/Quests/Q1.Build_an_Array_With_Stack_Operations)
 - [Q2. Evaluate Reverse Polish Notation](src/Quests/Q2.Evaluate_Reverse_Polish_Notation)
+- [Q3. Exclusive Time of Functions](src/Quests/Q3.Exclusive_Time_of_Functions)
