@@ -49,3 +49,4 @@
 - [Q2. Evaluate Reverse Polish Notation](src/Quests/Q2.Evaluate_Reverse_Polish_Notation)
 - [Q3. Exclusive Time of Functions](src/Quests/Q3.Exclusive_Time_of_Functions)
 - [Q1. Final Prices With a Special Discount in a Shop](src/Quests/Q1.Final_Prices_With_a_Special_Discount_in_a_Shop)
+- [Q2. Daily Temperatures](src/Quests/Q2.Daily_Temperatures)
