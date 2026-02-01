@@ -54,3 +54,4 @@
 - [496. Next Greater Element I](src/496.Next_Greater_Element_I)
 - [316. Remove Duplicate Letters](src/316.Remove_Duplicate_Letters)
 - [402. Remove K Digits](src/402.Remove_K_Digits)
+- [132 Pattern](src/456.132_Pattern)
