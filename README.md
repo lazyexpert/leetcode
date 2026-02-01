@@ -51,3 +51,4 @@
 - [Q1. Final Prices With a Special Discount in a Shop](src/Quests/Q1.Final_Prices_With_a_Special_Discount_in_a_Shop)
 - [Q2. Daily Temperatures](src/Quests/Q2.Daily_Temperatures)
 - [Q3. Largest Rectangle in Histogram](src/Quests/Q3.Largest_Rectangle_in_Histogram)
+- [496. Next Greater Element I](src/496.Next_Greater_Element_I)
