@@ -57,3 +57,4 @@
 - [132 Pattern](src/456.132_Pattern)
 - [503. Next Greater Element II](src/503.Next_Greater_Element_II)
 - [581. Shortest Unsorted Continuous Subarray](src/581.Shortest_Unsorted_Continuous_Subarray)
+- [654. Maximum Binary Tree](src/654.Maximum_Binary_Tree)
