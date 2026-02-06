@@ -60,3 +60,4 @@
 - [654. Maximum Binary Tree](src/654.Maximum_Binary_Tree)
 - [901. Online Stock Span](src/901.Online_Stock_Span)
 - [853. Car Fleet](src/853.Car_Fleet)
+- [769. Max Chunks To Make Sorted](src/769.Max_Chunks_To_Make_Sorted)
