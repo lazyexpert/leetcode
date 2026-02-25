@@ -61,3 +61,4 @@
 - [901. Online Stock Span](src/901.Online_Stock_Span)
 - [853. Car Fleet](src/853.Car_Fleet)
 - [769. Max Chunks To Make Sorted](src/769.Max_Chunks_To_Make_Sorted)
+- [1356. Sort Integers by The Number of 1 Bits](src/1356.Sort_Integers_by_The_Number_of_1_Bits)
