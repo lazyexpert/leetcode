@@ -1,15 +1,14 @@
 function numWaterBottles(numBottles: number, numExchange: number): number {
+  let drunk = numBottles;
   let empty = numBottles;
-  let used = 0;
 
   while (empty >= numExchange) {
-    const timesToExchange = (empty / numExchange) | 0;
-    const toConsume = timesToExchange * numExchange;
-    used += toConsume;
-    empty += timesToExchange - toConsume;
+    const newFull = Math.floor(empty / numExchange);
+    drunk += newFull;
+    empty = newFull + (empty % numExchange);
   }
 
-  return used + empty;
-};
+  return drunk;
+}
 
 numWaterBottles(9, 3);
