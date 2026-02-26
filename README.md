@@ -63,3 +63,4 @@
 - [769. Max Chunks To Make Sorted](src/769.Max_Chunks_To_Make_Sorted)
 - [1356. Sort Integers by The Number of 1 Bits](src/1356.Sort_Integers_by_The_Number_of_1_Bits)
 - [110. Balanced Binary Tree](src/110.Balanced_Binary_Tree)
+- [1404. Number of Steps to Reduce a Number in Binary Representation to One](src/1404.Number_of_Steps_to_Reduce_a_Number_in_Binary_Representation_to_One)
