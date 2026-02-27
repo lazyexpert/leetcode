@@ -31,5 +31,4 @@ func (f *Foo) Third(printThird func()) {
 	// Do not change this line
 	<-f.third
 	printThird()
-	f.first <- struct{}{}
 }
