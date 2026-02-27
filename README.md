@@ -69,3 +69,4 @@
 - [16. 3Sum Closest](src/16.3Sum_Closest)
 - [1114. Print in Order](src/1114.Print_in_Order)
 - [9. Palindrome Number](src/9.Palindrome_Number)
+- [70. Climbing Stairs](src/70.Climbing_Stairs)
