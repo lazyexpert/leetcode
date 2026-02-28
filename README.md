@@ -72,3 +72,4 @@
 - [70. Climbing Stairs](src/70.Climbing_Stairs)
 - [121. Best Time to Buy and Sell Stock](src/121.Best_Time_to_Buy_and_Sell_Stock)
 - [509. Fibonacci Number](src/509.Fibonacci_Number)
+- [118. Pascal's Triangle](src/118.Pascal's_Triangle)
