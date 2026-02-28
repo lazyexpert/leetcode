@@ -74,3 +74,4 @@
 - [509. Fibonacci Number](src/509.Fibonacci_Number)
 - [118. Pascal's Triangle](src/118.Pascal's_Triangle)
 - [119. Pascal's Triangle II](src/119.Pascal's_Triangle_II)
+- [55. Jump Game](src/55.Jump_Game)
