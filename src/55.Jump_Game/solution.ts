@@ -1,22 +1,11 @@
-function jumpTowardsEnd(nums: number[], idx: number): boolean {
-  if (idx === nums.length -1) return true;
-  if (idx > nums.length - 1) return false;
+function canJump(nums: number[]): boolean {
+  let farthest = 0;
+  const last = nums.length - 1;
 
-  let jump = nums[idx];
-  if (jump === -1) return false;
-
-  while (jump > 0) {
-    const res = jumpTowardsEnd(nums, idx + jump--);
-    if (res === true) {
-      return true;
-    }
+  for (let i = 0; i <= farthest && i < nums.length; i++) {
+    farthest = Math.max(farthest, i + nums[i]);
+    if (farthest >= last) return true;
   }
 
-  nums[idx] = -1;
-  return false;
+  return farthest >= last;
 }
-
-function canJump(nums: number[]): boolean {
-  
-  // return jumpTowardsEnd(nums, 0);
-};
