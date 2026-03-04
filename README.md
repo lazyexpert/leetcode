@@ -81,3 +81,4 @@
 - [860. Lemonade Change](src/860.Lemonade_Change)
 - [704. Binary Search](src/704.Binary_Search)
 - [35. Search Insert Position](src/35.Search_Insert_Position)
+- [278. First Bad Version](src/278.First_Bad_Version)
