@@ -82,3 +82,4 @@
 - [704. Binary Search](src/704.Binary_Search)
 - [35. Search Insert Position](src/35.Search_Insert_Position)
 - [278. First Bad Version](src/278.First_Bad_Version)
+- [33. Search in Rotated Sorted Array](src/33.Search_in_Rotated_Sorted_Array)
