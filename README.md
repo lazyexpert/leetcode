@@ -84,3 +84,4 @@
 - [278. First Bad Version](src/278.First_Bad_Version)
 - [33. Search in Rotated Sorted Array](src/33.Search_in_Rotated_Sorted_Array)
 - [153. Find Minimum in Rotated Sorted Array](src/153.Find_Minimum_in_Rotated_Sorted_Array)
+- [206. Reverse Linked List](src/206.Reverse_Linked_List)
