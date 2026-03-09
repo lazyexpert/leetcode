@@ -3,13 +3,7 @@
 // `1` representing a fresh orange, or
 // `2` representing a rotten orange.
 // Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
-// function orangesRotting(grid: number[][]): number {
-//   // entrypoints - all rotten oranges currently placed
 function orangesRotting(grid: number[][]): number {
-  // entrypoints - all rotten oranges currently placed
-
-  
-  // const lookup = new Set<string>(); // `${i}:${j}` key to track visited indexes
   let minutes = 0
   const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
@@ -25,8 +19,6 @@ function orangesRotting(grid: number[][]): number {
   }
 
   while (freshOrangesCount > 0 && nextQueue.length > 0) {
-    // const queue = collectAllEntryPoints(2);
-    // if (queue.length === 0) break;
     queue = nextQueue;
     nextQueue = new Array<number[]>();
     while (queue.length > 0) {
