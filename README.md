@@ -99,3 +99,4 @@
 - [1046. Last Stone Weight](src/1046.Last_Stone_Weight)
 - [56. Merge Intervals](src/56.Merge_Intervals)
 - [965. Univalued Binary Tree](src/965.Univalued_Binary_Tree)
+- [2022. Convert 1D Array Into 2D Array](src/2022.Convert_1D_Array_Into_2D_Array)
