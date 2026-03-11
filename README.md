@@ -101,3 +101,4 @@
 - [965. Univalued Binary Tree](src/965.Univalued_Binary_Tree)
 - [2022. Convert 1D Array Into 2D Array](src/2022.Convert_1D_Array_Into_2D_Array)
 - [100. Same Tree](src/100.Same_Tree)
+- [1572. Matrix Diagonal Sum](src/1572.Matrix_Diagonal_Sum)
