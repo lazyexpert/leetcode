@@ -104,3 +104,4 @@
 - [1572. Matrix Diagonal Sum](src/1572.Matrix_Diagonal_Sum)
 - [57. Insert Interval](src/57.Insert_Interval)
 - [78. Subsets](src/78.Subsets)
+- [46. Permutations](src/46.Permutations)
