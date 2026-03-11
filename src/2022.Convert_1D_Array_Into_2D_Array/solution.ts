@@ -19,4 +19,4 @@ function construct2DArray(original: number[], m: number, n: number): number[][] 
   return result;
 };
 
-construct2DArray([1,2], 1, 1);
+construct2DArray([1,2,3,4], 2, 2);
