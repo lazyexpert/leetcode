@@ -105,3 +105,4 @@
 - [57. Insert Interval](src/57.Insert_Interval)
 - [78. Subsets](src/78.Subsets)
 - [46. Permutations](src/46.Permutations)
+- [599. Minimum Index Sum of Two Lists](src/599.Minimum_Index_Sum_of_Two_Lists)
