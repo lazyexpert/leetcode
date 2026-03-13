@@ -112,3 +112,4 @@
 - [338. Counting Bits](src/338.Counting_Bits)
 - [136. Single Number](src/136.Single_Number)
 - [207. Course Schedule](src/207.Course_Schedule)
+- [3396. Minimum Number of Operations to Make Elements in Array Distinct](src/3396.Minimum_Number_of_Operations_to_Make_Elements_in_Array_Distinct)
