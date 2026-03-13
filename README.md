@@ -114,3 +114,4 @@
 - [207. Course Schedule](src/207.Course_Schedule)
 - [3396. Minimum Number of Operations to Make Elements in Array Distinct](src/3396.Minimum_Number_of_Operations_to_Make_Elements_in_Array_Distinct)
 - [661. Image Smoother](src/661.Image_Smoother)
+- [3083. Existence of a Substring in a String and Its Reverse](src/3083.Existence_of_a_Substring_in_a_String_and_Its_Reverse)
