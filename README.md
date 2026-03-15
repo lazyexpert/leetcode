@@ -126,3 +126,4 @@
 - [125. Valid Palindrome](src/125.Valid_Palindrome)
 - [1742. Maximum Number of Balls in a Box](src/1742.Maximum_Number_of_Balls_in_a_Box)
 - [2108. Find First Palindromic String in the Array](src/2108.Find_First_Palindromic_String_in_the_Array)
+- [242. Valid Anagram](src/242.Valid_Anagram)
