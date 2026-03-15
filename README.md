@@ -122,3 +122,4 @@
 - [2068. Check Whether Two Strings are Almost Equivalent](src/2068.Check_Whether_Two_Strings_are_Almost_Equivalent)
 - [3028. Ant on the Boundary](src/3028.Ant_on_the_Boundary)
 - [3364. Minimum Positive Sum Subarray](src/3364.Minimum_Positive_Sum_Subarray)
+- [2389. Longest Subsequence With Limited Sum](src/2389.Longest_Subsequence_With_Limited_Sum)
