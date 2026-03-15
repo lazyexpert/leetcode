@@ -130,3 +130,4 @@
 - [1736. Latest Time by Replacing Hidden Digits](src/1736.Latest_Time_by_Replacing_Hidden_Digits)
 - [344. Reverse String](src/344.Reverse_String)
 - [1796. Second Largest Digit in a String](src/1796.Second_Largest_Digit_in_a_String)
+- [1654. Minimum Jumps to Reach Home](src/1654.Minimum_Jumps_to_Reach_Home)
