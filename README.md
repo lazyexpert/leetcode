@@ -118,3 +118,4 @@
 - [3030. Find the Grid of Region Average](src/3030.Find_the_Grid_of_Region_Average)
 - [3325. Count Substrings With K-Frequency Characters I](src/3325.Count_Substrings_With_K-Frequency_Characters_I)
 - [731. My Calendar II](src/731.My_Calendar_II)
+- [1413. Minimum Value to Get Positive Step by Step Sum](src/1413.Minimum_Value_to_Get_Positive_Step_by_Step_Sum)
