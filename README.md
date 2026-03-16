@@ -132,3 +132,4 @@
 - [1796. Second Largest Digit in a String](src/1796.Second_Largest_Digit_in_a_String)
 - [1654. Minimum Jumps to Reach Home](src/1654.Minimum_Jumps_to_Reach_Home)
 - [852. Peak Index in a Mountain Array](src/852.Peak_Index_in_a_Mountain_Array)
+- [3194. Minimum Average of Smallest and Largest Elements](src/3194.Minimum_Average_of_Smallest_and_Largest_Elements)
