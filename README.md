@@ -135,3 +135,4 @@
 - [3194. Minimum Average of Smallest and Largest Elements](src/3194.Minimum_Average_of_Smallest_and_Largest_Elements)
 - [1550. Three Consecutive Odds](src/1550.Three_Consecutive_Odds)
 - [3803. Count Residue Prefixes](src/3803.Count_Residue_Prefixes)
+- [2540. Minimum Common Value](src/2540.Minimum_Common_Value)
