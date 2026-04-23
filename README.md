@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 0      |
-| **Total**  | **138**|
+| SQL        | 1      |
+| **Total**  | **139**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -153,3 +153,4 @@
 - [84. Largest Rectangle in Histogram](src/Hard/84.Largest_Rectangle_in_Histogram)
 
 ## SQL
+- [175. Combine Two Tables](src/SQL/175.Combine_Two_Tables)
