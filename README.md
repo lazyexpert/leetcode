@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 5      |
-| **Total**  | **143**|
+| SQL        | 6      |
+| **Total**  | **144**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -158,3 +158,4 @@
 - [177. Nth Highest Salary](src/SQL/177.Nth_Highest_Salary)
 - [181. Employees Earning More Than Their Managers](src/SQL/181.Employees_Earning_More_Than_Their_Managers)
 - [182. Duplicate Emails](src/SQL/182.Duplicate_Emails)
+- [183. Customers Who Never Order](src/SQL/183.Customers_Who_Never_Order)
