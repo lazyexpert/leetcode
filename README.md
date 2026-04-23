@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 11     |
-| **Total**  | **149**|
+| SQL        | 12     |
+| **Total**  | **150**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -164,3 +164,4 @@
 - [511. Game Play Analysis I](src/SQL/511.Game_Play_Analysis_I)
 - [577. Employee Bonus](src/SQL/577.Employee_Bonus)
 - [584. Find Customer Referee](src/SQL/584.Find_Customer_Referee)
+- [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)
