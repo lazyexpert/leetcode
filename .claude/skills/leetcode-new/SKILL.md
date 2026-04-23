@@ -102,10 +102,6 @@ Write the updated file.
 
 ## Step 5 — Report
 
-Print a short confirmation:
-- Folder created at `src/.../`
-- README.md written
-- Root README.md updated (section, counter, total)
-- history.md updated (month, line)
+Print a short confirmation: "Job's done."
 
 Nothing else. Do not summarise the problem, do not suggest approaches, do not mention complexity.
