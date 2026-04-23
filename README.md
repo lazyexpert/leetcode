@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 8      |
-| **Total**  | **146**|
+| SQL        | 9      |
+| **Total**  | **147**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -161,3 +161,4 @@
 - [183. Customers Who Never Order](src/SQL/183.Customers_Who_Never_Order)
 - [196. Delete Duplicate Emails](src/SQL/196.Delete_Duplicate_Emails)
 - [197. Rising Temperature](src/SQL/197.Rising_Temperature)
+- [511. Game Play Analysis I](src/SQL/511.Game_Play_Analysis_I)
