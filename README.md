@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 1      |
-| **Total**  | **139**|
+| SQL        | 2      |
+| **Total**  | **140**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -154,3 +154,4 @@
 
 ## SQL
 - [175. Combine Two Tables](src/SQL/175.Combine_Two_Tables)
+- [176. Second Highest Salary](src/SQL/176.Second_Highest_Salary)
