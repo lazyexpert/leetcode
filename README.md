@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 7      |
-| **Total**  | **145**|
+| SQL        | 8      |
+| **Total**  | **146**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -160,3 +160,4 @@
 - [182. Duplicate Emails](src/SQL/182.Duplicate_Emails)
 - [183. Customers Who Never Order](src/SQL/183.Customers_Who_Never_Order)
 - [196. Delete Duplicate Emails](src/SQL/196.Delete_Duplicate_Emails)
+- [197. Rising Temperature](src/SQL/197.Rising_Temperature)
