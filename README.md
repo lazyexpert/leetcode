@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 10     |
-| **Total**  | **148**|
+| SQL        | 11     |
+| **Total**  | **149**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -163,3 +163,4 @@
 - [197. Rising Temperature](src/SQL/197.Rising_Temperature)
 - [511. Game Play Analysis I](src/SQL/511.Game_Play_Analysis_I)
 - [577. Employee Bonus](src/SQL/577.Employee_Bonus)
+- [584. Find Customer Referee](src/SQL/584.Find_Customer_Referee)
