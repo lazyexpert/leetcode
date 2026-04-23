@@ -167,3 +167,203 @@
 - [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)
 - [595. Big Countries](src/SQL/595.Big_Countries)
 - [596. Classes With at Least 5 Students](src/SQL/596.Classes_With_at_Least_5_Students)
+
+---
+
+## Pattern tracking
+
+[`patterns-coverage.md`](patterns-coverage.md) maps every algorithmic solution to one or more patterns (Two Pointers, Sliding Window, BFS / DFS, etc.) and maintains a **Revisit List** of problems where a meaningfully better solution exists.
+
+### Auto-update via pre-commit hook
+
+A git pre-commit hook keeps `patterns-coverage.md` in sync automatically. When you stage a `solution.ts` file the hook:
+
+1. Reads the staged code with `git show :<path>`
+2. Sends it to the [Claude Code](https://claude.ai/code) CLI for classification
+3. Inserts the problem into the correct pattern section(s) in numerical order
+4. Adds it to the Revisit List if a better approach exists
+5. Stages the updated `patterns-coverage.md` as part of the same commit
+
+Non-solution commits (documentation, SQL, refactors) are passed through without touching the file.
+
+### Requirements
+
+- Python 3
+- [Claude Code](https://claude.ai/code) CLI installed and authenticated (`claude` in PATH)
+
+### Setup
+
+```bash
+cp .git/hooks/pre-commit .git/hooks/pre-commit   # already installed if you cloned
+chmod +x .git/hooks/pre-commit
+```
+
+> **Note:** `.git/hooks/` is not tracked by git. If you fork this repo, copy the hook manually from the snippet below and make it executable.
+
+### Hook source
+
+```python
+#!/usr/bin/env python3
+"""
+pre-commit hook — patterns-coverage.md auto-updater.
+
+When a solution.ts under src/(Easy|Medium|Hard)/ is staged, calls Claude to
+classify it by pattern and optimality, then updates patterns-coverage.md.
+Non-solution commits (docs, SQL, refactors) pass through unchanged.
+"""
+import json
+import os
+import re
+import subprocess
+import sys
+
+REPO = subprocess.run(
+    ['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True
+).stdout.strip()
+
+COVERAGE = os.path.join(REPO, 'patterns-coverage.md')
+
+PATTERNS = [
+    'Two Pointers', 'Sliding Window', 'Binary Search', 'Stack / Monotonic Stack',
+    'BFS / DFS', 'Dynamic Programming', 'Greedy', 'Hash Map / Hash Set',
+    'Linked List', 'Tree Traversal', 'Backtracking', 'Bit Manipulation',
+    'Heap / Priority Queue', 'Trie', 'Prefix Sum', 'Math', 'Sorting',
+    'Design / Simulation',
+]
+
+# ── 1. find staged algorithmic solution files ──────────────────────────────
+
+staged = subprocess.run(
+    ['git', 'diff', '--cached', '--name-only'], capture_output=True, text=True
+).stdout.strip().splitlines()
+
+solutions = [
+    f for f in staged
+    if re.match(r'^src/(Easy|Medium|Hard)/[^/]+/solution\.ts$', f)
+]
+
+if not solutions:
+    sys.exit(0)
+
+if not os.path.exists(COVERAGE):
+    print('pre-commit: patterns-coverage.md not found — skipping update')
+    sys.exit(0)
+
+if subprocess.run(['which', 'claude'], capture_output=True).returncode != 0:
+    print("pre-commit: 'claude' not in PATH — skipping patterns-coverage.md update")
+    sys.exit(0)
+
+# ── 2. helpers ─────────────────────────────────────────────────────────────
+
+def insert_section(doc: str, section: str, num: int, link: str):
+    """Insert link in numerical order inside a ## section. Returns (doc, found)."""
+    rx = rf'(## {re.escape(section)}\n)(.*?)(\n## |\n---)'
+    m = re.search(rx, doc, re.DOTALL)
+    if not m:
+        return doc, False
+    hdr, body, tail = m.group(1), m.group(2), m.group(3)
+    lines = [l for l in body.split('\n') if l.strip()]
+    entries = []
+    for l in lines:
+        em = re.match(r'- \[(\d+)\.', l)
+        entries.append((int(em.group(1)) if em else -1, l))
+    if any(n == num for n, _ in entries if n != -1):
+        return doc, True  # already present, skip
+    entries.append((num, link))
+    numbered   = sorted([(n, l) for n, l in entries if n != -1], key=lambda x: x[0])
+    unnumbered = [l for n, l in entries if n == -1]
+    new_body   = '\n'.join(unnumbered + [l for _, l in numbered])
+    replacement = hdr + new_body + '\n' + tail
+    return doc[:m.start()] + replacement + doc[m.end():], True
+
+
+def insert_revisit(doc: str, num: int, link: str) -> str:
+    """Append link to the Revisit List in numerical order."""
+    rx = r'(## Revisit List\n\nProblems where a meaningfully better solution exists:\n)(.*?)$'
+    rm = re.search(rx, doc, re.DOTALL)
+    if not rm or link in rm.group(2):
+        return doc
+    lines = [l for l in rm.group(2).strip().splitlines() if l.strip()]
+    entries = []
+    for l in lines:
+        em = re.match(r'- \[(\d+)\.', l)
+        if em:
+            entries.append((int(em.group(1)), l))
+    entries.append((num, link))
+    entries.sort(key=lambda x: x[0])
+    new_body = '\n'.join(l for _, l in entries) + '\n'
+    return doc[:rm.start()] + rm.group(1) + new_body
+
+
+# ── 3. process each staged solution ────────────────────────────────────────
+
+for file_path in solutions:
+    parts      = file_path.split('/')
+    difficulty = parts[1]
+    folder     = parts[2]
+    number     = int(folder.split('.')[0])
+    title      = '.'.join(folder.split('.')[1:]).replace('_', ' ')
+
+    code = subprocess.run(
+        ['git', 'show', f':{file_path}'], capture_output=True, text=True
+    ).stdout
+    if not code.strip():
+        continue
+
+    prompt = (
+        'Analyze this LeetCode solution. '
+        'Reply with ONLY a JSON object — no explanation, no markdown, no extra text.\n\n'
+        f'Problem: {number}. {title} ({difficulty})\n\n'
+        f'```typescript\n{code}\n```\n\n'
+        'Format: {"patterns": ["Pattern1"], "revisit": false}\n\n'
+        'Choose patterns ONLY from this exact list:\n'
+        f'{", ".join(PATTERNS)}\n\n'
+        'Set revisit=true only if a genuinely better time or space complexity '
+        'solution exists using a standard pattern above.'
+    )
+
+    try:
+        result = subprocess.run(
+            ['claude', '-p', prompt],
+            capture_output=True, text=True, timeout=60
+        )
+        raw = result.stdout
+    except subprocess.TimeoutExpired:
+        print(f'pre-commit: claude timed out for {file_path} — skipping')
+        continue
+    except Exception as e:
+        print(f'pre-commit: claude call failed for {file_path}: {e}')
+        continue
+
+    match = re.search(r'\{[^{}]*\}', raw, re.DOTALL)
+    if not match:
+        print(f'pre-commit: no JSON in claude response for {file_path} — skipping')
+        continue
+
+    try:
+        data = json.loads(match.group())
+    except json.JSONDecodeError:
+        print(f'pre-commit: malformed JSON for {file_path} — skipping')
+        continue
+
+    patterns = data.get('patterns', [])
+    revisit  = data.get('revisit', False)
+    link     = f'- [{number}. {title}](src/{difficulty}/{folder})'
+
+    doc = open(COVERAGE).read()
+
+    for p in patterns:
+        doc, ok = insert_section(doc, p, number, link)
+        if not ok:
+            print(f"  ⚠ section '{p}' not found in patterns-coverage.md")
+
+    if revisit:
+        doc = insert_revisit(doc, number, link)
+
+    open(COVERAGE, 'w').write(doc)
+    flag = ' + revisit ⚠' if revisit else ''
+    print(f'  ✓ {number}. {title} → {patterns}{flag}')
+
+subprocess.run(['git', 'add', COVERAGE])
+sys.exit(0)
+```
