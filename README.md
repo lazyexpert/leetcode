@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 4      |
-| **Total**  | **142**|
+| SQL        | 5      |
+| **Total**  | **143**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -157,3 +157,4 @@
 - [176. Second Highest Salary](src/SQL/176.Second_Highest_Salary)
 - [177. Nth Highest Salary](src/SQL/177.Nth_Highest_Salary)
 - [181. Employees Earning More Than Their Managers](src/SQL/181.Employees_Earning_More_Than_Their_Managers)
+- [182. Duplicate Emails](src/SQL/182.Duplicate_Emails)
