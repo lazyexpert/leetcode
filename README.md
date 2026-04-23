@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 12     |
-| **Total**  | **150**|
+| SQL        | 13     |
+| **Total**  | **151**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -165,3 +165,4 @@
 - [577. Employee Bonus](src/SQL/577.Employee_Bonus)
 - [584. Find Customer Referee](src/SQL/584.Find_Customer_Referee)
 - [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)
+- [595. Big Countries](src/SQL/595.Big_Countries)
