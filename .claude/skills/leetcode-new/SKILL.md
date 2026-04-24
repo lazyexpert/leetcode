@@ -4,8 +4,8 @@ description: >
   Set up scaffolding for a new LeetCode problem from a copy-pasted problem statement.
   Invoke with /leetcode-new, /lc-new, or /leet-new (all resolve to this skill).
   Creates the problem folder, writes README.md (statement only),
-  updates the root README.md index and counters, and appends to history.md.
-  Never writes solution code, never hints at complexity or approach.
+  creates an empty solution file, updates the root README.md index and counters,
+  and appends to history.md. Never writes solution code, never hints at complexity or approach.
 allowed-tools: Read, Write, Edit, Bash
 ---
 
@@ -13,7 +13,7 @@ allowed-tools: Read, Write, Edit, Bash
 
 You are setting up scaffolding for a new LeetCode problem. The raw problem text is in `$ARGUMENTS`.
 
-**Critical constraint: never write solution code, never hint at an algorithm, approach, or complexity.**
+**Critical constraint: always create an empty solution file (`solution.ts` for algorithmic, `solution.sql` for SQL) — never write solution code inside it, never hint at an algorithm, approach, or complexity.**
 
 ---
 
@@ -63,6 +63,10 @@ Explanation: ... (if present)
 ```
 
 Add additional `## Example` blocks if the problem has more than one.
+
+Write an empty solution file in the same directory:
+- **Algorithmic** → `solution.ts` (empty file)
+- **SQL** → `solution.sql` (empty file)
 
 ---
 

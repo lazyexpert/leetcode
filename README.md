@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 14     |
-| **Total**  | **152**|
+| SQL        | 15     |
+| **Total**  | **153**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -167,6 +167,7 @@
 - [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)
 - [595. Big Countries](src/SQL/595.Big_Countries)
 - [596. Classes With at Least 5 Students](src/SQL/596.Classes_With_at_Least_5_Students)
+- [1757. Recyclable and Low Fat Products](src/SQL/1757.Recyclable_and_Low_Fat_Products)
 
 ---
 
