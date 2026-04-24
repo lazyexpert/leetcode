@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 18     |
-| **Total**  | **156**|
+| SQL        | 19     |
+| **Total**  | **157**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -167,6 +167,7 @@
 - [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)
 - [595. Big Countries](src/SQL/595.Big_Countries)
 - [596. Classes With at Least 5 Students](src/SQL/596.Classes_With_at_Least_5_Students)
+- [1068. Product Sales Analysis I](src/SQL/1068.Product_Sales_Analysis_I)
 - [1148. Article Views I](src/SQL/1148.Article_Views_I)
 - [1378. Replace Employee ID With The Unique Identifier](src/SQL/1378.Replace_Employee_ID_With_The_Unique_Identifier)
 - [1683. Invalid Tweets](src/SQL/1683.Invalid_Tweets)
