@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 19     |
-| **Total**  | **157**|
+| SQL        | 20     |
+| **Total**  | **158**|
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum/)
@@ -170,6 +170,7 @@
 - [1068. Product Sales Analysis I](src/SQL/1068.Product_Sales_Analysis_I)
 - [1148. Article Views I](src/SQL/1148.Article_Views_I)
 - [1378. Replace Employee ID With The Unique Identifier](src/SQL/1378.Replace_Employee_ID_With_The_Unique_Identifier)
+- [1581. Customer Who Visited but Did Not Make Any Transactions](src/SQL/1581.Customer_Who_Visited_but_Did_Not_Make_Any_Transactions)
 - [1683. Invalid Tweets](src/SQL/1683.Invalid_Tweets)
 - [1757. Recyclable and Low Fat Products](src/SQL/1757.Recyclable_and_Low_Fat_Products)
 
