@@ -1,0 +1,12 @@
+{
+  "language": {
+    "extension": "ts",
+    "name": "typescript"
+  },
+  "retry_thresholds_minutes": {
+    "Easy": 15,
+    "Medium": 30,
+    "Hard": 60
+  },
+  "review_cooldown_days": 7
+}

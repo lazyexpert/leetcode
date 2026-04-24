@@ -17,3 +17,6 @@ SQL: [175](src/SQL/175.Combine_Two_Tables), [176](src/SQL/176.Second_Highest_Sal
 
 ## March 2018
 [20](src/Easy/20.Valid_Parentheses), [66](src/Easy/66.Plus_One), [155](src/Medium/155.Min_Stack), [208](src/Medium/208.Implement_Trie), [231](src/Easy/231.Power_Of_Two), [257](src/Easy/257.Binary_Tree_Paths), [280](src/Medium/280.Wiggle_Sort), [326](src/Easy/326.Power_Of_Three), [387](src/Easy/387.First_Unique_Character_In_A_String), [463](src/Easy/463.Island_Perimeter), [657](src/Easy/657.Judge_Route_Circle)
+
+## January 2018
+[1](src/Easy/1.Two_Sum), [13](src/Easy/13.Roman_to_Integer), [760](src/Easy/760.Find_Anagram_Mappings), [771](src/Easy/771.Jewels_and_Stones)

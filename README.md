@@ -1,376 +1,204 @@
-# Done so far
+# LeetCode practice workflow
 
-| Difficulty | Solved |
-|------------|--------|
-| Easy       | 83     |
-| Medium     | 54     |
-| Hard       | 1      |
-| SQL        | 21     |
-| **Total**  | **159**|
+A Claude Code-powered, git-native LeetCode practice toolkit. Scaffolds problems from a URL, classifies patterns automatically on `/leetcode-done`, tracks solve times (per attempt) against configurable thresholds, and keeps a retry queue of problems worth revisiting.
 
-## Easy
-- [1. Two Sum](src/Easy/1.Two_Sum/)
-- [9. Palindrome Number](src/Easy/9.Palindrome_Number)
-- [13. Roman to Integer](src/Easy/13.Roman_to_Integer)
-- [20. Valid Parentheses](src/Easy/20.Valid_Parentheses/)
-- [21. Merge Two Sorted Lists](src/Easy/21.Merge_Two_Sorted_Lists)
-- [28. Find the Index of the First Occurrence in a String](src/Easy/28.Find_the_Index_of_the_First_Occurrence_in_a_String)
-- [35. Search Insert Position](src/Easy/35.Search_Insert_Position)
-- [66. Plus One](src/Easy/66.Plus_One/)
-- [70. Climbing Stairs](src/Easy/70.Climbing_Stairs)
-- [83. Remove Duplicates from Sorted List](src/Easy/83.Remove_Duplicates_from_Sorted_List)
-- [100. Same Tree](src/Easy/100.Same_Tree)
-- [110. Balanced Binary Tree](src/Easy/110.Balanced_Binary_Tree)
-- [118. Pascal's Triangle](src/Easy/118.Pascal's_Triangle)
-- [119. Pascal's Triangle II](src/Easy/119.Pascal's_Triangle_II)
-- [121. Best Time to Buy and Sell Stock](src/Easy/121.Best_Time_to_Buy_and_Sell_Stock)
-- [125. Valid Palindrome](src/Easy/125.Valid_Palindrome)
-- [136. Single Number](src/Easy/136.Single_Number)
-- [141. Linked List Cycle](src/Easy/141.Linked_List_Cycle)
-- [191. Number of 1 Bits](src/Easy/191.Number_of_1_Bits)
-- [206. Reverse Linked List](src/Easy/206.Reverse_Linked_List)
-- [231. Power Of Two](src/Easy/231.Power_Of_Two/)
-- [242. Valid Anagram](src/Easy/242.Valid_Anagram)
-- [257. Binary Tree Paths](src/Easy/257.Binary_Tree_Paths/)
-- [278. First Bad Version](src/Easy/278.First_Bad_Version)
-- [283. Move Zeroes](src/Easy/283.Move_Zeroes)
-- [326. Power Of Three](src/Easy/326.Power_Of_Three/)
-- [338. Counting Bits](src/Easy/338.Counting_Bits)
-- [344. Reverse String](src/Easy/344.Reverse_String)
-- [345. Reverse Vowels](src/Easy/345.Reverse_Vowels/)
-- [387. First Unique Character In A String](src/Easy/387.First_Unique_Character_In_A_String/)
-- [389. Find The Difference](src/Easy/389.Find_The_Difference/)
-- [392. Is Subsequence](src/Easy/392.Is_Subsequence)
-- [409. Longest Palindrome](src/Easy/409.Longest_Palindrome)
-- [443. String Compression](src/Easy/443.String_Compression)
-- [448. Find All Numbers Disappeared in an Array](src/Easy/448.Find_All_Numbers_Disappeared_in_an_Array)
-- [455. Assign Cookies](src/Easy/455.Assign_Cookies)
-- [463. Island Perimeter](src/Easy/463.Island_Perimeter/)
-- [485. Max Consecutive Ones](src/Easy/485.Max_Consecutive_Ones)
-- [496. Next Greater Element I](src/Easy/496.Next_Greater_Element_I)
-- [509. Fibonacci Number](src/Easy/509.Fibonacci_Number)
-- [561. Array Partition](src/Easy/561.Array_Partition)
-- [599. Minimum Index Sum of Two Lists](src/Easy/599.Minimum_Index_Sum_of_Two_Lists)
-- [605. Can Place Flowers](src/Easy/605.Can_Place_Flowers)
-- [645. Set Mismatch](src/Easy/645.Set_Mismatch)
-- [657. Judge Route Circle](src/Easy/657.Judge_Route_Circle/)
-- [661. Image Smoother](src/Easy/661.Image_Smoother)
-- [703. Kth Largest Element in a Stream](src/Easy/703.Kth_Largest_Element_in_a_Stream)
-- [704. Binary Search](src/Easy/704.Binary_Search)
-- [733. Flood Fill](src/Easy/733.Flood_Fill)
-- [760. Find Anagram Mappings](src/Easy/760.Find_Anagram_Mappings/)
-- [771. Jewels and Stones](src/Easy/771.Jewels_and_Stones/)
-- [852. Peak Index in a Mountain Array](src/Easy/852.Peak_Index_in_a_Mountain_Array)
-- [860. Lemonade Change](src/Easy/860.Lemonade_Change)
-- [965. Univalued Binary Tree](src/Easy/965.Univalued_Binary_Tree)
-- [1046. Last Stone Weight](src/Easy/1046.Last_Stone_Weight)
-- [1071. Greatest Common Divisor of Strings](src/Easy/1071.Greatest_Common_Divisor_of_Strings)
-- [1114. Print in Order](src/Easy/1114.Print_in_Order)
-- [1356. Sort Integers by The Number of 1 Bits](src/Easy/1356.Sort_Integers_by_The_Number_of_1_Bits)
-- [1365. How Many Numbers Are Smaller Than the Current Number](src/Easy/1365.How_Many_Numbers_Are_Smaller_Than_the_Current_Number)
-- [1413. Minimum Value to Get Positive Step by Step Sum](src/Easy/1413.Minimum_Value_to_Get_Positive_Step_by_Step_Sum)
-- [1431. Kids With the Greatest Number of Candies](src/Easy/1431.Kids_With_the_Greatest_Number_of_Candies)
-- [1470. Shuffle the Array](src/Easy/1470.Shuffle_the_Array)
-- [1475. Final Prices With a Special Discount in a Shop](src/Easy/1475.Final_Prices_With_a_Special_Discount_in_a_Shop)
-- [1518. Water Bottles](src/Easy/1518.Water_Bottles)
-- [1550. Three Consecutive Odds](src/Easy/1550.Three_Consecutive_Odds)
-- [1572. Matrix Diagonal Sum](src/Easy/1572.Matrix_Diagonal_Sum)
-- [1736. Latest Time by Replacing Hidden Digits](src/Easy/1736.Latest_Time_by_Replacing_Hidden_Digits)
-- [1742. Maximum Number of Balls in a Box](src/Easy/1742.Maximum_Number_of_Balls_in_a_Box)
-- [1768. Merge Strings Alternately](src/Easy/1768.Merge_Strings_Alternately)
-- [1796. Second Largest Digit in a String](src/Easy/1796.Second_Largest_Digit_in_a_String)
-- [1929. Concatenation of Array](src/Easy/1929.Concatenation_of_Array)
-- [2022. Convert 1D Array Into 2D Array](src/Easy/2022.Convert_1D_Array_Into_2D_Array)
-- [2068. Check Whether Two Strings are Almost Equivalent](src/Easy/2068.Check_Whether_Two_Strings_are_Almost_Equivalent)
-- [2108. Find First Palindromic String in the Array](src/Easy/2108.Find_First_Palindromic_String_in_the_Array)
-- [2215. Find the Difference of Two Arrays](src/Easy/2215.Find_the_Difference_of_Two_Arrays)
-- [2389. Longest Subsequence With Limited Sum](src/Easy/2389.Longest_Subsequence_With_Limited_Sum)
-- [2540. Minimum Common Value](src/Easy/2540.Minimum_Common_Value)
-- [3028. Ant on the Boundary](src/Easy/3028.Ant_on_the_Boundary)
-- [3083. Existence of a Substring in a String and Its Reverse](src/Easy/3083.Existence_of_a_Substring_in_a_String_and_Its_Reverse)
-- [3194. Minimum Average of Smallest and Largest Elements](src/Easy/3194.Minimum_Average_of_Smallest_and_Largest_Elements)
-- [3364. Minimum Positive Sum Subarray](src/Easy/3364.Minimum_Positive_Sum_Subarray)
-- [3396. Minimum Number of Operations to Make Elements in Array Distinct](src/Easy/3396.Minimum_Number_of_Operations_to_Make_Elements_in_Array_Distinct)
-- [3803. Count Residue Prefixes](src/Easy/3803.Count_Residue_Prefixes)
-
-## Medium
-- [2. Add Two Numbers](src/Medium/2.Add_Two_Numbers)
-- [3. Longest Substring Without Repeating Characters](src/Medium/3.Longest_Substring_Without_Repeating_Characters)
-- [5. Longest Palindromic Substring](src/Medium/5.Longest_Palindromic_Substring)
-- [6. Zigzag Conversion](src/Medium/6.Zigzag_Conversion)
-- [7. Reverse Integer](src/Medium/7.Reverse_Integer)
-- [8. String to Integer](src/Medium/8.String_to_Integer(atoi)
-- [11. Container With Most Water](src/Medium/11.Container_With_Most_Water)
-- [12. Integer to Roman](src/Medium/12.Integer_to_Roman)
-- [15. 3Sum](src/Medium/15.3Sum)
-- [16. 3Sum Closest](src/Medium/16.3Sum_Closest)
-- [19. Remove Nth Node From End of List](src/Medium/19.Remove_Nth_Node_From_End_of_List)
-- [33. Search in Rotated Sorted Array](src/Medium/33.Search_in_Rotated_Sorted_Array)
-- [39. Combination Sum](src/Medium/39.Combination_Sum)
-- [46. Permutations](src/Medium/46.Permutations)
-- [55. Jump Game](src/Medium/55.Jump_Game)
-- [56. Merge Intervals](src/Medium/56.Merge_Intervals)
-- [57. Insert Interval](src/Medium/57.Insert_Interval)
-- [78. Subsets](src/Medium/78.Subsets)
-- [133. Clone Graph](src/Medium/133.Clone_Graph)
-- [150. Evaluate Reverse Polish Notation](src/Medium/150.Evaluate_Reverse_Polish_Notation)
-- [151. Reverse Words in a String](src/Medium/151.Reverse_Words_in_a_String)
-- [153. Find Minimum in Rotated Sorted Array](src/Medium/153.Find_Minimum_in_Rotated_Sorted_Array)
-- [155. Min Stack](src/Medium/155.Min_Stack/)
-- [200. Number of Islands](src/Medium/200.Number_of_Islands)
-- [207. Course Schedule](src/Medium/207.Course_Schedule)
-- [208. Implement Trie](src/Medium/208.Implement_Trie/)
-- [215. Kth Largest Element in an Array](src/Medium/215.Kth_Largest_Element_in_an_Array)
-- [238. Product of Array Except Self](src/Medium/238.Product_of_Array_Except_Self)
-- [280. Wiggle Sort](src/Medium/280.Wiggle_Sort/)
-- [316. Remove Duplicate Letters](src/Medium/316.Remove_Duplicate_Letters)
-- [334. Increasing Triplet Subsequence](src/Medium/334.Increasing_Triplet_Subsequence)
-- [347. Top K Frequent Elements](src/Medium/347.Top_K_Frequent_Elements)
-- [402. Remove K Digits](src/Medium/402.Remove_K_Digits)
-- [406. Queue reconstruction by height](src/Medium/406.Queue_Reconstruction_by_Height/)
-- [421. Find Maximum XOR Of Two Numbers In Array](src/Medium/421.Find_Maximum_XOR/)
-- [132 Pattern](src/Medium/456.132_Pattern)
-- [503. Next Greater Element II](src/Medium/503.Next_Greater_Element_II)
-- [535. Encode and Decode tinyURL](src/Medium/535.Encode_And_Decode_TinyURL/)
-- [581. Shortest Unsorted Continuous Subarray](src/Medium/581.Shortest_Unsorted_Continuous_Subarray)
-- [636. Exclusive Time of Functions](src/Medium/636.Exclusive_Time_of_Functions)
-- [654. Maximum Binary Tree](src/Medium/654.Maximum_Binary_Tree)
-- [713. Subarray Product Less Than K](src/Medium/713.Subarray_Product_Less_Than_K)
-- [731. My Calendar II](src/Medium/731.My_Calendar_II)
-- [739. Daily Temperatures](src/Medium/739.Daily_Temperatures)
-- [769. Max Chunks To Make Sorted](src/Medium/769.Max_Chunks_To_Make_Sorted)
-- [853. Car Fleet](src/Medium/853.Car_Fleet)
-- [901. Online Stock Span](src/Medium/901.Online_Stock_Span)
-- [994. Rotting Oranges](src/Medium/994.Rotting_Oranges)
-- [1404. Number of Steps to Reduce a Number in Binary Representation to One](src/Medium/1404.Number_of_Steps_to_Reduce_a_Number_in_Binary_Representation_to_One)
-- [1441. Build an Array With Stack Operations](src/Medium/1441.Build_an_Array_With_Stack_Operations)
-- [1654. Minimum Jumps to Reach Home](src/Medium/1654.Minimum_Jumps_to_Reach_Home)
-- [1679. Max Number of K-Sum Pairs](src/Medium/1679.Max_Number_of_K-Sum_Pairs)
-- [3030. Find the Grid of Region Average](src/Medium/3030.Find_the_Grid_of_Region_Average)
-- [3325. Count Substrings With K-Frequency Characters I](src/Medium/3325.Count_Substrings_With_K-Frequency_Characters_I)
-
-## Hard
-- [84. Largest Rectangle in Histogram](src/Hard/84.Largest_Rectangle_in_Histogram)
-
-## SQL
-- [175. Combine Two Tables](src/SQL/175.Combine_Two_Tables)
-- [176. Second Highest Salary](src/SQL/176.Second_Highest_Salary)
-- [177. Nth Highest Salary](src/SQL/177.Nth_Highest_Salary)
-- [181. Employees Earning More Than Their Managers](src/SQL/181.Employees_Earning_More_Than_Their_Managers)
-- [182. Duplicate Emails](src/SQL/182.Duplicate_Emails)
-- [183. Customers Who Never Order](src/SQL/183.Customers_Who_Never_Order)
-- [196. Delete Duplicate Emails](src/SQL/196.Delete_Duplicate_Emails)
-- [197. Rising Temperature](src/SQL/197.Rising_Temperature)
-- [511. Game Play Analysis I](src/SQL/511.Game_Play_Analysis_I)
-- [577. Employee Bonus](src/SQL/577.Employee_Bonus)
-- [584. Find Customer Referee](src/SQL/584.Find_Customer_Referee)
-- [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)
-- [595. Big Countries](src/SQL/595.Big_Countries)
-- [596. Classes With at Least 5 Students](src/SQL/596.Classes_With_at_Least_5_Students)
-- [1068. Product Sales Analysis I](src/SQL/1068.Product_Sales_Analysis_I)
-- [1148. Article Views I](src/SQL/1148.Article_Views_I)
-- [1378. Replace Employee ID With The Unique Identifier](src/SQL/1378.Replace_Employee_ID_With_The_Unique_Identifier)
-- [1581. Customer Who Visited but Did Not Make Any Transactions](src/SQL/1581.Customer_Who_Visited_but_Did_Not_Make_Any_Transactions)
-- [1661. Average Time of Process per Machine](src/SQL/1661.Average_Time_of_Process_per_Machine)
-- [1683. Invalid Tweets](src/SQL/1683.Invalid_Tweets)
-- [1757. Recyclable and Low Fat Products](src/SQL/1757.Recyclable_and_Low_Fat_Products)
+All structured data lives in a local SQLite database (`.claude/practice.db`). The five root-level Markdown files are **generated views** — regenerated from the DB every time you run `/leetcode-new` or `/leetcode-done`. Never edit them by hand.
 
 ---
 
-## Pattern tracking
+## Requirements
 
-[`patterns-coverage.md`](patterns-coverage.md) maps every algorithmic solution to one or more patterns (Two Pointers, Sliding Window, BFS / DFS, etc.) and maintains a **Revisit List** of problems where a meaningfully better solution exists.
+- Python 3.10+ (the scripts use PEP 604 union syntax)
+- `sqlite3` CLI (ships with macOS; used for `.dump` / rebuild)
+- Node.js 18+ (for the TS compiler your editor will run)
+- Git
+- [Claude Code](https://claude.ai/code) CLI (`claude` in PATH), authenticated
 
-### Auto-update via pre-commit hook
+`/leetcode-done` shells out to the `claude` CLI for pattern classification. Both skills run inside Claude Code.
 
-A git pre-commit hook keeps `patterns-coverage.md` in sync automatically. When you stage a `solution.ts` file the hook:
+---
 
-1. Reads the staged code with `git show :<path>`
-2. Sends it to the [Claude Code](https://claude.ai/code) CLI for classification
-3. Inserts the problem into the correct pattern section(s) in numerical order
-4. Adds it to the Revisit List if a better approach exists
-5. Stages the updated `patterns-coverage.md` as part of the same commit
+## Usage
 
-Non-solution commits (documentation, SQL, refactors) are passed through without touching the file.
+### Start a new problem
 
-### Requirements
+```
+/leetcode-new https://leetcode.com/problems/two-sum/
+```
 
-- Python 3
-- [Claude Code](https://claude.ai/code) CLI installed and authenticated (`claude` in PATH)
+The skill pipes [`fetch.py`](.claude/skills/leetcode-new/scripts/fetch.py) (GraphQL → manifest) through [`scaffold.py`](.claude/skills/leetcode-new/scripts/scaffold.py). Net effect:
 
-### Setup
+1. Creates `src/<Difficulty|SQL>/<number>.<Title_With_Underscores>/` + `README.md` + empty `solution.{ext}`
+2. Inserts a `problems` row in [`.claude/practice.db`](.claude/practice.db)
+3. Opens a new in-progress `attempts` row (`duration_minutes IS NULL`) — algorithmic problems only; SQL isn't timed
+4. Regenerates `progress.md`, `history.md`, and the other views from the DB
+5. Writes a fresh `.claude/practice.sql` dump
+
+Aliases: `/leetcode-new`, `/lc-new`, `/leet-new`.
+
+> Premium problems can't be fetched from the public GraphQL endpoint; the skill reports this and exits.
+
+### Reiterate on a problem
+
+If you re-run `/leetcode-new` on a problem that already has a non-empty solution file, the skill runs in **reiteration mode**:
+
+- Truncates `solution.{ext}`
+- Opens a **new** `attempts` row (prior attempts are preserved — per-problem timing history is queryable)
+- Leaves `problems` metadata alone
+
+Running `/leetcode-done` on the new solution re-classifies patterns and closes the new attempt — the retry queue reconciles automatically.
+
+### Finish a solution
+
+```
+/leetcode-done
+```
+
+Aliases: `/leetcode-done`, `/lc-done`, `/leet-done`. The skill invokes [`done.py`](.claude/skills/leetcode-done/scripts/done.py), which:
+
+1. Detects the problem being completed — the single non-empty `solution.{ext}` under `src/` that differs from `HEAD` (staged, modified, or untracked). Errors out if zero or multiple candidates match.
+2. Closes the latest open `attempts` row for that problem — computes `duration_minutes` from `started_at`, sets the `revisit` flag based on Claude's classification.
+3. Classifies algorithmic pattern(s) via the `claude` CLI — picked from a fixed 18-pattern enum (Two Pointers, Sliding Window, BFS/DFS, Dynamic Programming, …). Replaces the problem's `patterns` rows with the fresh set.
+4. Upserts `config.json` thresholds into the `thresholds` table (no-op if unchanged).
+5. Regenerates all five Markdown views from the DB.
+6. Writes a deterministic `.claude/practice.sql` dump.
+7. `git add .` and `git commit -m "{number}. {difficulty|SQL}. {title}"` — e.g. `3. Medium. Longest Substring Without Repeating Characters`.
+
+Push is intentionally left to you — batch multiple problems together or push immediately.
+
+SQL solutions skip pattern classification and attempt timing, but still get scaffolded into the DB and committed with the same message format.
+
+### Retry a problem
+
+```
+/leetcode-retry
+```
+
+Aliases: `/leetcode-retry`, `/lc-retry`, `/leet-retry`. Picks a random algorithmic problem from `retry.md` whose cooldown has elapsed, then runs the same prep as `/leetcode-new`'s reiteration path: truncates the solution file, opens a new `attempts` row, refreshes the views, writes a fresh `.sql` dump. Commit the re-solve via `/leetcode-done` as usual.
+
+A problem is **retry-eligible** if any of the three `retry_flags` are raised:
+
+- `timing` — latest attempt exceeded the difficulty threshold
+- `complexity` — classifier flagged a meaningfully better solution exists
+- `stale` — `review_cooldown_days` (default 7) have elapsed since the latest attempt
+
+The picker only considers problems with `stale = 1`, i.e. outside the cooldown window — solving a problem buys it 7 days of respite from the picker even if it's flagged for timing or complexity.
+
+### Configuration
+
+Everything tweakable lives in `config.json`:
+
+```json
+{
+  "language": {
+    "extension": "ts",
+    "name": "typescript"
+  },
+  "retry_thresholds_minutes": {
+    "Easy": 15,
+    "Medium": 30,
+    "Hard": 60
+  },
+  "review_cooldown_days": 7
+}
+```
+
+**`language.extension`** — file extension for algorithmic solutions (`solution.<ext>`). SQL problems always use `.sql` regardless.
+**`language.name`** — code-fence language hint used when `done.py` asks Claude to classify. Affects classification quality, nothing else.
+**`retry_thresholds_minutes`** — solve time past which the `timing` flag is raised.
+**`review_cooldown_days`** — days since last attempt after which the `stale` flag is raised; also the minimum age for `/leetcode-retry` to pick a problem.
+
+Switching languages: change both `language` fields, then run `/leetcode-new` on a fresh problem — it'll write `solution.<new-ext>`. Existing solution files aren't touched; only future scaffolds and `/leetcode-done` detection are affected.
+
+### Adjusting retry thresholds
+
+The retry queue (`retry.md`) is a **SQL view** (`retry_flags`) over `attempts`, the `thresholds` table, and the `settings` table (for the cooldown). There is no reconciliation step — tweak `config.json`, run `/leetcode-done`, and the view reflects the new reality immediately. If you want to change thresholds without finishing a problem, run `/leetcode-done` with only `config.json` modified; it commits the config change with message `tune retry thresholds`.
+
+Reasons are rendered as `+`-joined flag names (e.g. `stale`, `complexity+stale`, `timing+complexity+stale`). Only algorithmic problems appear in `retry.md`; SQL is excluded.
+
+### Source of truth: `.claude/practice.db`
+
+The database is the single source of truth. Tables:
+
+| Table | Holds |
+|-------|-------|
+| `problems`   | stable metadata (number, title, difficulty, kind, folder, created_at) |
+| `attempts`   | one row per solve session — started_at, duration_minutes (NULL while in progress), revisit |
+| `patterns`   | (problem_number, pattern, created_at) — classification snapshot per problem |
+| `thresholds` | mirror of `retry_thresholds_minutes` in `config.json` |
+| `settings`   | singleton key-value bag (currently: `review_cooldown_days`) |
+| `retry_flags` VIEW | algorithmic problems with three boolean flag columns — `timing_bad`, `complexity_bad`, `stale` |
+
+Per-attempt storage means timing history is queryable (`SELECT duration_minutes FROM attempts WHERE problem_number = 3 ORDER BY started_at`), and reiterating on a flagged problem creates a new attempt row rather than overwriting the old one.
+
+The `.db` file itself is **gitignored** — what lands in git is [`.claude/practice.sql`](.claude/practice.sql), a deterministic `.dump` produced after every mutation. Rebuild the DB with:
 
 ```bash
-cp .git/hooks/pre-commit .git/hooks/pre-commit   # already installed if you cloned
-chmod +x .git/hooks/pre-commit
+sqlite3 .claude/practice.db < .claude/practice.sql
 ```
 
-> **Note:** `.git/hooks/` is not tracked by git. If you fork this repo, copy the hook manually from the snippet below and make it executable.
+---
 
-### Hook source
+## Pedagogical constraint
 
-```python
-#!/usr/bin/env python3
-"""
-pre-commit hook — patterns-coverage.md auto-updater.
+When using Claude Code to discuss a problem you're actively solving, the skill and the root [`CLAUDE.md`](CLAUDE.md) enforce a strict rule: **never produce solution code unless explicitly asked**. Hints are fine (point out complexity, mention the pattern name, ask a guiding question); finished code is not.
 
-When a solution.ts under src/(Easy|Medium|Hard)/ is staged, calls Claude to
-classify it by pattern and optimality, then updates patterns-coverage.md.
-Non-solution commits (docs, SQL, refactors) pass through unchanged.
-"""
-import json
-import os
-import re
-import subprocess
-import sys
+---
 
-REPO = subprocess.run(
-    ['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True
-).stdout.strip()
+## Components
 
-COVERAGE = os.path.join(REPO, 'patterns-coverage.md')
+| Path | Purpose |
+|------|---------|
+| [`.claude/skills/leetcode-new/SKILL.md`](.claude/skills/leetcode-new/SKILL.md) | Skill entry point for `/leetcode-new` — pipes `fetch.py` into `scaffold.py` |
+| [`.claude/skills/leetcode-new/scripts/fetch.py`](.claude/skills/leetcode-new/scripts/fetch.py) | Fetches problem from LeetCode's public GraphQL endpoint → JSON manifest |
+| [`.claude/skills/leetcode-new/scripts/scaffold.py`](.claude/skills/leetcode-new/scripts/scaffold.py) | Creates folder/files, inserts `problems` + `attempts` rows, renders views, dumps SQL |
+| [`.claude/skills/leetcode-done/SKILL.md`](.claude/skills/leetcode-done/SKILL.md) | Skill entry point for `/leetcode-done` — delegates to `done.py` |
+| [`.claude/skills/leetcode-done/scripts/done.py`](.claude/skills/leetcode-done/scripts/done.py) | Closes attempt, classifies patterns, renders views, dumps SQL, commits |
+| [`.claude/skills/leetcode-done/scripts/schema.sql`](.claude/skills/leetcode-done/scripts/schema.sql) | DB schema — tables + `retry_flags` view |
+| [`.claude/skills/leetcode-done/scripts/db.py`](.claude/skills/leetcode-done/scripts/db.py) | Shared DB helpers used by both skills |
+| [`.claude/skills/leetcode-done/scripts/render.py`](.claude/skills/leetcode-done/scripts/render.py) | Renders all five Markdown views from the DB |
+| [`.claude/skills/leetcode-done/scripts/migrate.py`](.claude/skills/leetcode-done/scripts/migrate.py) | One-shot migrator — used to bootstrap the DB from pre-existing MD state |
+| [`.claude/skills/leetcode-retry/SKILL.md`](.claude/skills/leetcode-retry/SKILL.md) | Skill entry point for `/leetcode-retry`, `/lc-retry`, `/leet-retry` |
+| [`.claude/skills/leetcode-retry/scripts/retry.py`](.claude/skills/leetcode-retry/scripts/retry.py) | Picks a random stale problem and preps it for reiteration (shares `db.prepare_retry` with scaffold.py) |
+| [`.claude/practice.sql`](.claude/practice.sql) | Git-tracked DB dump; rebuild `.claude/practice.db` from this |
+| [`config.json`](config.json) | Retry thresholds per difficulty |
+| [`progress.md`](progress.md) | View: problem index with per-difficulty counters |
+| [`history.md`](history.md) | View: solves grouped by month |
+| [`timings.md`](timings.md) | View: completed attempt durations |
+| [`retry.md`](retry.md) | View: `retry_flags` output, formatted as a table |
+| [`patterns-coverage.md`](patterns-coverage.md) | View: problems grouped by classifier pattern |
+| [`CLAUDE.md`](CLAUDE.md) | Collaboration rules + repo layout for Claude Code sessions |
 
-PATTERNS = [
-    'Two Pointers', 'Sliding Window', 'Binary Search', 'Stack / Monotonic Stack',
-    'BFS / DFS', 'Dynamic Programming', 'Greedy', 'Hash Map / Hash Set',
-    'Linked List', 'Tree Traversal', 'Backtracking', 'Bit Manipulation',
-    'Heap / Priority Queue', 'Trie', 'Prefix Sum', 'Math', 'Sorting',
-    'Design / Simulation',
-]
+---
 
-# ── 1. find staged algorithmic solution files ──────────────────────────────
+## Setup (when cloning)
 
-staged = subprocess.run(
-    ['git', 'diff', '--cached', '--name-only'], capture_output=True, text=True
-).stdout.strip().splitlines()
+```bash
+git clone <repo> leetcode && cd leetcode
 
-solutions = [
-    f for f in staged
-    if re.match(r'^src/(Easy|Medium|Hard)/[^/]+/solution\.ts$', f)
-]
+# Rebuild the local SQLite DB from the tracked dump:
+sqlite3 .claude/practice.db < .claude/practice.sql
 
-if not solutions:
-    sys.exit(0)
-
-if not os.path.exists(COVERAGE):
-    print('pre-commit: patterns-coverage.md not found — skipping update')
-    sys.exit(0)
-
-if subprocess.run(['which', 'claude'], capture_output=True).returncode != 0:
-    print("pre-commit: 'claude' not in PATH — skipping patterns-coverage.md update")
-    sys.exit(0)
-
-# ── 2. helpers ─────────────────────────────────────────────────────────────
-
-def insert_section(doc: str, section: str, num: int, link: str):
-    """Insert link in numerical order inside a ## section. Returns (doc, found)."""
-    rx = rf'(## {re.escape(section)}\n)(.*?)(\n## |\n---)'
-    m = re.search(rx, doc, re.DOTALL)
-    if not m:
-        return doc, False
-    hdr, body, tail = m.group(1), m.group(2), m.group(3)
-    lines = [l for l in body.split('\n') if l.strip()]
-    entries = []
-    for l in lines:
-        em = re.match(r'- \[(\d+)\.', l)
-        entries.append((int(em.group(1)) if em else -1, l))
-    if any(n == num for n, _ in entries if n != -1):
-        return doc, True  # already present, skip
-    entries.append((num, link))
-    numbered   = sorted([(n, l) for n, l in entries if n != -1], key=lambda x: x[0])
-    unnumbered = [l for n, l in entries if n == -1]
-    new_body   = '\n'.join(unnumbered + [l for _, l in numbered])
-    replacement = hdr + new_body + '\n' + tail
-    return doc[:m.start()] + replacement + doc[m.end():], True
-
-
-def insert_revisit(doc: str, num: int, link: str) -> str:
-    """Append link to the Revisit List in numerical order."""
-    rx = r'(## Revisit List\n\nProblems where a meaningfully better solution exists:\n)(.*?)$'
-    rm = re.search(rx, doc, re.DOTALL)
-    if not rm or link in rm.group(2):
-        return doc
-    lines = [l for l in rm.group(2).strip().splitlines() if l.strip()]
-    entries = []
-    for l in lines:
-        em = re.match(r'- \[(\d+)\.', l)
-        if em:
-            entries.append((int(em.group(1)), l))
-    entries.append((num, link))
-    entries.sort(key=lambda x: x[0])
-    new_body = '\n'.join(l for _, l in entries) + '\n'
-    return doc[:rm.start()] + rm.group(1) + new_body
-
-
-# ── 3. process each staged solution ────────────────────────────────────────
-
-for file_path in solutions:
-    parts      = file_path.split('/')
-    difficulty = parts[1]
-    folder     = parts[2]
-    number     = int(folder.split('.')[0])
-    title      = '.'.join(folder.split('.')[1:]).replace('_', ' ')
-
-    code = subprocess.run(
-        ['git', 'show', f':{file_path}'], capture_output=True, text=True
-    ).stdout
-    if not code.strip():
-        continue
-
-    prompt = (
-        'Analyze this LeetCode solution. '
-        'Reply with ONLY a JSON object — no explanation, no markdown, no extra text.\n\n'
-        f'Problem: {number}. {title} ({difficulty})\n\n'
-        f'```typescript\n{code}\n```\n\n'
-        'Format: {"patterns": ["Pattern1"], "revisit": false}\n\n'
-        'Choose patterns ONLY from this exact list:\n'
-        f'{", ".join(PATTERNS)}\n\n'
-        'Set revisit=true only if a genuinely better time or space complexity '
-        'solution exists using a standard pattern above.'
-    )
-
-    try:
-        result = subprocess.run(
-            ['claude', '-p', prompt],
-            capture_output=True, text=True, timeout=60
-        )
-        raw = result.stdout
-    except subprocess.TimeoutExpired:
-        print(f'pre-commit: claude timed out for {file_path} — skipping')
-        continue
-    except Exception as e:
-        print(f'pre-commit: claude call failed for {file_path}: {e}')
-        continue
-
-    match = re.search(r'\{[^{}]*\}', raw, re.DOTALL)
-    if not match:
-        print(f'pre-commit: no JSON in claude response for {file_path} — skipping')
-        continue
-
-    try:
-        data = json.loads(match.group())
-    except json.JSONDecodeError:
-        print(f'pre-commit: malformed JSON for {file_path} — skipping')
-        continue
-
-    patterns = data.get('patterns', [])
-    revisit  = data.get('revisit', False)
-    link     = f'- [{number}. {title}](src/{difficulty}/{folder})'
-
-    doc = open(COVERAGE).read()
-
-    for p in patterns:
-        doc, ok = insert_section(doc, p, number, link)
-        if not ok:
-            print(f"  ⚠ section '{p}' not found in patterns-coverage.md")
-
-    if revisit:
-        doc = insert_revisit(doc, number, link)
-
-    open(COVERAGE, 'w').write(doc)
-    flag = ' + revisit ⚠' if revisit else ''
-    print(f'  ✓ {number}. {title} → {patterns}{flag}')
-
-subprocess.run(['git', 'add', COVERAGE])
-sys.exit(0)
+# Install Claude Code if you haven't:
+# https://claude.ai/code
 ```
+
+If you fork this repo to start your own practice log, wipe the data:
+
+```bash
+rm -rf src/*
+rm .claude/practice.db .claude/practice.sql
+# Next /leetcode-new recreates the DB from schema.sql.
+```
+
+---
+
+## Design notes
+
+- **Database as source of truth, Markdown as views.** No more regex surgery on hand-mutated files — renderers are pure `SELECT → string`, and every MD file is rebuilt wholesale on each `/leetcode-new` or `/leetcode-done`.
+- **Per-attempt history.** Reiteration appends a new `attempts` row rather than overwriting, so "how did my solve time for #3 evolve?" is a one-line query.
+- **`retry_flags` is a view, not a table.** Changing thresholds in `config.json` reshapes the retry queue on the next render — no reconciliation step.
+- **DB is local; `.sql` dump is portable.** Binary `.db` files don't diff cleanly, so the git-tracked form is the plain-text `.dump`.
+- **Self-contained per problem.** Each problem folder owns its `README.md` and `solution.<ext>` (algorithmic) or `solution.sql` (SQL). Solutions are pasted into LeetCode's online judge.
+- **Algorithmic language is configurable, SQL is fixed.** Set `language.extension` / `language.name` in `config.json` to swap in Python, Go, Rust, etc. SQL problems always use `.sql`.
+- **Automation is opinionated, not generic.** Everything assumes Claude Code, Git, and the working directory layout in [`CLAUDE.md`](CLAUDE.md).

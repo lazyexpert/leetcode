@@ -1,2 +1,8 @@
 .vscode
-Gemfile.lock
+
+# Local practice DB — rebuild from .claude/practice.sql via:
+#   sqlite3 .claude/practice.db < .claude/practice.sql
+.claude/practice.db
+
+# Python bytecode caches from the skill scripts
+.claude/skills/**/__pycache__/
