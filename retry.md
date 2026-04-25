@@ -86,7 +86,6 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2026-03-01 | 561 | [Array Partition](src/Easy/561.Array_Partition) | Easy | stale |
 | 2026-02-01 | 581 | [Shortest Unsorted Continuous Subarray](src/Medium/581.Shortest_Unsorted_Continuous_Subarray) | Medium | stale |
 | 2026-03-01 | 599 | [Minimum Index Sum of Two Lists](src/Easy/599.Minimum_Index_Sum_of_Two_Lists) | Easy | stale |
-| 2026-01-01 | 605 | [Can Place Flowers](src/Easy/605.Can_Place_Flowers) | Easy | stale |
 | 2026-01-01 | 636 | [Exclusive Time of Functions](src/Medium/636.Exclusive_Time_of_Functions) | Medium | stale |
 | 2026-01-01 | 645 | [Set Mismatch](src/Easy/645.Set_Mismatch) | Easy | stale |
 | 2026-02-01 | 654 | [Maximum Binary Tree](src/Medium/654.Maximum_Binary_Tree) | Medium | stale |

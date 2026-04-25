@@ -1,13 +1,9 @@
 function canPlaceFlowers(flowerbed: number[], n: number): boolean {
-  if (n === 0) return true;
-
-  for (let i = 0; i < flowerbed.length && n > 0; i++) {
-    const curr = flowerbed[i];
-    const prev = flowerbed[i-1] ?? 0;
-    const next = flowerbed[i+1] ?? 0;
-    if (curr === 0 && prev === 0 && next === 0) {
-      n--;
+  const dummy = [0, ...flowerbed, 0];
+  for (let i = 1; i < dummy.length - 1 && n > 0; i ++) {
+    if (dummy[i] === 0 && dummy[i-1] === 0 && dummy[i+1] === 0) {
       i++;
+      n--;
     }
   }
 
