@@ -120,7 +120,7 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2026-02-01 | 1518 | [Water Bottles](src/Easy/1518.Water_Bottles) | Easy | stale |
 | 2026-03-01 | 1550 | [Three Consecutive Odds](src/Easy/1550.Three_Consecutive_Odds) | Easy | stale |
 | 2026-03-01 | 1572 | [Matrix Diagonal Sum](src/Easy/1572.Matrix_Diagonal_Sum) | Easy | stale |
-| 2026-03-01 | 1654 | [Minimum Jumps to Reach Home](src/Medium/1654.Minimum_Jumps_to_Reach_Home) | Medium | complexity+stale |
+| 2026-04-25 | 1654 | [Minimum Jumps to Reach Home](src/Medium/1654.Minimum_Jumps_to_Reach_Home) | Medium | timing |
 | 2026-01-01 | 1679 | [Max Number of K-Sum Pairs](src/Medium/1679.Max_Number_of_K-Sum_Pairs) | Medium | stale |
 | 2026-03-01 | 1736 | [Latest Time by Replacing Hidden Digits](src/Easy/1736.Latest_Time_by_Replacing_Hidden_Digits) | Easy | stale |
 | 2026-03-01 | 1742 | [Maximum Number of Balls in a Box](src/Easy/1742.Maximum_Number_of_Balls_in_a_Box) | Easy | stale |
