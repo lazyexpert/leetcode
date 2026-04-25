@@ -74,7 +74,7 @@ SQL solutions skip pattern classification and attempt timing, but still get scaf
 /leetcode-retry
 ```
 
-Aliases: `/leetcode-retry`, `/lc-retry`, `/leet-retry`. Picks a random algorithmic problem from `retry.md` whose cooldown has elapsed, then runs the same prep as `/leetcode-new`'s reiteration path: truncates the solution file, opens a new `attempts` row, refreshes the views, writes a fresh `.sql` dump. Commit the re-solve via `/leetcode-done` as usual.
+Aliases: `/leetcode-retry`, `/lc-retry`, `/leet-retry`. Picks a random algorithmic problem from `retry.md` whose cooldown has elapsed, then runs the same prep as `/leetcode-new`'s reiteration path: replaces the solution body with a signature-only template (function/class declarations kept, bodies emptied via the `claude` CLI), opens a new `attempts` row, refreshes the views, writes a fresh `.sql` dump. Commit the re-solve via `/leetcode-done` as usual. If `claude` isn't on PATH, the file is fully wiped instead.
 
 A problem is **retry-eligible** if any of the three `retry_flags` are raised:
 
@@ -90,16 +90,10 @@ Everything tweakable lives in `config.json`:
 
 ```json
 {
-  "language": {
-    "extension": "ts",
-    "name": "typescript"
-  },
-  "retry_thresholds_minutes": {
-    "Easy": 15,
-    "Medium": 30,
-    "Hard": 60
-  },
-  "review_cooldown_days": 7
+  "language": { "extension": "ts", "name": "typescript" },
+  "retry_thresholds_minutes": { "Easy": 15, "Medium": 30, "Hard": 60 },
+  "review_cooldown_days": 7,
+  "patterns": ["Two Pointers", "Sliding Window", "Binary Search", "..."]
 }
 ```
 
@@ -107,6 +101,7 @@ Everything tweakable lives in `config.json`:
 **`language.name`** — code-fence language hint used when `done.py` asks Claude to classify. Affects classification quality, nothing else.
 **`retry_thresholds_minutes`** — solve time past which the `timing` flag is raised.
 **`review_cooldown_days`** — days since last attempt after which the `stale` flag is raised; also the minimum age for `/leetcode-retry` to pick a problem.
+**`patterns`** — the closed enum the classifier may pick from, and the render order of `## <Pattern>` sections in `patterns-coverage.md`. Add your own (e.g. `Union Find`, `Line Sweep`, `Segment Tree`) or trim to fewer, coarser buckets. Classifier responses outside this list are filtered out with a warning, so no junk rows reach the DB.
 
 Switching languages: change both `language` fields, then run `/leetcode-new` on a fresh problem — it'll write `solution.<new-ext>`. Existing solution files aren't touched; only future scaffolds and `/leetcode-done` detection are affected.
 

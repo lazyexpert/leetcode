@@ -34,14 +34,6 @@ import render
 
 REPO = db.REPO
 
-PATTERNS = [
-    'Two Pointers', 'Sliding Window', 'Binary Search', 'Stack / Monotonic Stack',
-    'BFS / DFS', 'Dynamic Programming', 'Greedy', 'Hash Map / Hash Set',
-    'Linked List', 'Tree Traversal', 'Backtracking', 'Bit Manipulation',
-    'Heap / Priority Queue', 'Trie', 'Prefix Sum', 'Math', 'Sorting',
-    'Design / Simulation',
-]
-
 
 def build_solution_rx(extension: str) -> re.Pattern[str]:
     """Match src/<Easy|Medium|Hard>/<folder>/solution.<configured-ext>
@@ -116,8 +108,12 @@ def detect_problem(changed_paths: list[str], solution_rx: re.Pattern[str]) -> di
 # ── classification via Claude CLI ───────────────────────────────────────────
 
 def classify_solution(file_path: str, number: int, title: str, difficulty: str,
-                      language_name: str):
-    """Return (patterns: list[str], revisit: bool) or (None, None) on failure."""
+                      language_name: str, known_patterns: list[str]):
+    """Return (patterns: list[str], revisit: bool) or (None, None) on failure.
+
+    `known_patterns` is the closed enum the classifier must choose from;
+    responses are filtered against this list, so hallucinated labels never
+    reach the DB."""
     try:
         code = (REPO / file_path).read_text()
     except OSError:
@@ -132,7 +128,7 @@ def classify_solution(file_path: str, number: int, title: str, difficulty: str,
         f'```{language_name}\n{code}\n```\n\n'
         'Format: {"patterns": ["Pattern1"], "revisit": false}\n\n'
         'Choose patterns ONLY from this exact list:\n'
-        f'{", ".join(PATTERNS)}\n\n'
+        f'{", ".join(known_patterns)}\n\n'
         'Set revisit=true only if a genuinely better time or space complexity '
         'solution exists using a standard pattern above.'
     )
@@ -159,7 +155,14 @@ def classify_solution(file_path: str, number: int, title: str, difficulty: str,
         print(f'  ⚠ malformed JSON for {file_path} — skipping classification')
         return None, None
 
-    return data.get('patterns', []), bool(data.get('revisit', False))
+    raw_patterns = data.get('patterns', []) or []
+    known        = set(known_patterns)
+    accepted     = [p for p in raw_patterns if p in known]
+    rejected     = [p for p in raw_patterns if p not in known]
+    if rejected:
+        print(f'  ⚠ classifier returned unknown patterns {rejected} — filtered out')
+
+    return accepted, bool(data.get('revisit', False))
 
 
 # ── main ────────────────────────────────────────────────────────────────────
@@ -207,7 +210,8 @@ def main() -> int:
                 patterns, revisit = None, False
             else:
                 patterns, revisit = classify_solution(
-                    problem['path'], number, title, difficulty, language['name'])
+                    problem['path'], number, title, difficulty,
+                    language['name'], db.load_patterns())
 
             open_attempt = db.latest_open_attempt(conn, number)
             if open_attempt is None:

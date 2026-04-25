@@ -34,6 +34,8 @@ SQL problems live at `src/SQL/<number>.<Title_With_Underscores>/` and contain:
 
 The algorithmic language is **configurable per repo**. Change `language.extension` and `language.name` in `config.json` to target Python, Go, Kotlin, etc. Existing solution files aren't renamed on config change — the setting only affects future scaffolds and which file `/leetcode-done` looks for.
 
+The classifier pattern enum is also configurable via `config.json: patterns`. Default is 18 common LC patterns; add niche ones (`Union Find`, `Line Sweep`, `Segment Tree`) or trim for coarser buckets. The classifier is constrained to this list; responses outside it are filtered with a warning.
+
 ## Solution file conventions
 
 **Algorithmic solutions** match the LeetCode judge signature exactly — just the function, no `main`, no imports, no I/O, no `console.log`/`print`/test harness. Example with the default TypeScript config (`src/Medium/713.Subarray_Product_Less_Than_K/solution.ts`):
@@ -80,9 +82,9 @@ Premium problems cannot be fetched from the public GraphQL endpoint; the skill r
 /leetcode-retry
 ```
 
-`scripts/retry.py` queries `retry_flags`, filters to entries where `stale = 1` (cooldown elapsed), picks one at random, and runs the same teardown as scaffold.py's reiteration path: truncates the solution file and opens a new `attempts` row. Then re-renders views and dumps SQL. The user solves, then `/leetcode-done` commits.
+`scripts/retry.py` queries `retry_flags`, filters to entries where `stale = 1` (cooldown elapsed), picks one at random, and runs the same teardown as scaffold.py's reiteration path: replaces the solution body with a signature-only template (via Claude — keeps every function/class/method declaration, empties the bodies) and opens a new `attempts` row. Then re-renders views and dumps SQL. The user re-solves into the template, then `/leetcode-done` commits.
 
-The shared teardown lives in `db.prepare_retry(conn, number)` so `/leetcode-new` (reiteration) and `/leetcode-retry` use the same code path.
+The shared teardown lives in `db.prepare_retry(conn, number)` so `/leetcode-new` (reiteration) and `/leetcode-retry` use the same code path. SQL solutions get a full wipe instead — they're queries, no signature to preserve. If the `claude` CLI is unavailable, both flows fall back to a full wipe.
 
 ## Finishing a problem
 

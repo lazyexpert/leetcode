@@ -22,26 +22,14 @@ from __future__ import annotations
 import argparse
 import datetime
 import sqlite3
-import subprocess
 import sys
 from pathlib import Path
 
+import db
 
-REPO = Path(subprocess.run(
-    ['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True
-).stdout.strip())
 
-DEFAULT_DB = REPO / '.claude' / 'practice.db'
-
-# Render patterns in this fixed order — matches the classifier's enum so
-# the coverage file is stable even if row order in the table would differ.
-PATTERN_ORDER = [
-    'Two Pointers', 'Sliding Window', 'Binary Search', 'Stack / Monotonic Stack',
-    'BFS / DFS', 'Dynamic Programming', 'Greedy', 'Hash Map / Hash Set',
-    'Linked List', 'Tree Traversal', 'Backtracking', 'Bit Manipulation',
-    'Heap / Priority Queue', 'Trie', 'Prefix Sum', 'Math', 'Sorting',
-    'Design / Simulation',
-]
+REPO       = db.REPO
+DEFAULT_DB = db.DB_PATH
 
 
 def link_path(difficulty: str | None, kind: str, folder: str) -> str:
@@ -187,7 +175,7 @@ def render_retry(conn: sqlite3.Connection) -> str:
 def render_patterns(conn: sqlite3.Connection) -> str:
     out = ['# Pattern Coverage', '']
 
-    for pattern in PATTERN_ORDER:
+    for pattern in db.load_patterns():
         rows = list(conn.execute(
             'SELECT DISTINCT p.number, p.title, p.difficulty, p.kind, p.folder '
             'FROM patterns pt JOIN problems p ON p.number = pt.problem_number '

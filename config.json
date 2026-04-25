@@ -8,5 +8,25 @@
     "Medium": 30,
     "Hard": 60
   },
-  "review_cooldown_days": 7
+  "review_cooldown_days": 7,
+  "patterns": [
+    "Two Pointers",
+    "Sliding Window",
+    "Binary Search",
+    "Stack / Monotonic Stack",
+    "BFS / DFS",
+    "Dynamic Programming",
+    "Greedy",
+    "Hash Map / Hash Set",
+    "Linked List",
+    "Tree Traversal",
+    "Backtracking",
+    "Bit Manipulation",
+    "Heap / Priority Queue",
+    "Trie",
+    "Prefix Sum",
+    "Math",
+    "Sorting",
+    "Design / Simulation"
+  ]
 }

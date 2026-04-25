@@ -1,17 +1,16 @@
 function findContentChildren(g: number[], s: number[]): number {
-    g.sort((a,b) => a-b);
-    s.sort((a,b) => a-b);
+  g.sort();
+  s.sort();
 
-    let count = 0;
-    
-    for (let j = 0, i = 0; j < s.length; j++) {
-      if (g[i] <= s[j]) {
-        i++;
-        count++;
-      }
+  let chirlPtr = 0;
+  let counter = 0;
+
+  for (let i = 0; i < g.length; i++) {
+    if (s[chirlPtr] >= g[i]) {
+      chirlPtr++;
+      counter++;
     }
+  }
 
-    return count;
+  return counter;
 };
-
-findContentChildren([10,9,8,7], [5,6,7,8]);

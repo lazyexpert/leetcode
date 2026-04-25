@@ -78,7 +78,6 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2018-04-01 | 421 | [Find Maximum XOR Of Two Numbers In Array](src/Medium/421.Find_Maximum_XOR) | Medium | stale |
 | 2026-01-01 | 443 | [String Compression](src/Easy/443.String_Compression) | Easy | stale |
 | 2026-01-01 | 448 | [Find All Numbers Disappeared in an Array](src/Easy/448.Find_All_Numbers_Disappeared_in_an_Array) | Easy | stale |
-| 2026-03-01 | 455 | [Assign Cookies](src/Easy/455.Assign_Cookies) | Easy | stale |
 | 2026-02-01 | 456 | [132 Pattern](src/Medium/456.132_Pattern) | Medium | stale |
 | 2018-03-01 | 463 | [Island Perimeter](src/Easy/463.Island_Perimeter) | Easy | stale |
 | 2026-01-01 | 485 | [Max Consecutive Ones](src/Easy/485.Max_Consecutive_Ones) | Easy | stale |

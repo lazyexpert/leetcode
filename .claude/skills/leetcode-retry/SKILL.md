@@ -10,7 +10,7 @@ allowed-tools: Bash
 
 # leetcode-retry
 
-Pulls a random entry from `retry.md` whose cooldown (see `config.json: review_cooldown_days`) has elapsed, then readies that problem for a fresh solve — same teardown as reiteration mode in `/leetcode-new`.
+Pulls a random entry from `retry.md` whose cooldown (see `config.json: review_cooldown_days`) has elapsed, then readies that problem for a fresh solve — same teardown as reiteration mode in `/leetcode-new`. The previous solution body is replaced with a signature-only template (function/class declarations preserved) so you can re-solve without re-looking-up the LC judge signature.
 
 **Critical constraint: never write solution code, never hint at an algorithm, approach, or complexity.**
 

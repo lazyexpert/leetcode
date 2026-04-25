@@ -13,6 +13,7 @@ module. It is not meant to be run directly.
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import subprocess
 import sys
@@ -32,6 +33,13 @@ SCHEMA_SQL = Path(__file__).parent / 'schema.sql'
 DEFAULT_THRESHOLDS    = {'Easy': 15, 'Medium': 30, 'Hard': 60}
 DEFAULT_LANGUAGE      = {'extension': 'ts', 'name': 'typescript'}
 DEFAULT_COOLDOWN_DAYS = 7
+DEFAULT_PATTERNS      = [
+    'Two Pointers', 'Sliding Window', 'Binary Search', 'Stack / Monotonic Stack',
+    'BFS / DFS', 'Dynamic Programming', 'Greedy', 'Hash Map / Hash Set',
+    'Linked List', 'Tree Traversal', 'Backtracking', 'Bit Manipulation',
+    'Heap / Priority Queue', 'Trie', 'Prefix Sum', 'Math', 'Sorting',
+    'Design / Simulation',
+]
 
 
 def _load_config() -> dict:
@@ -69,6 +77,26 @@ def load_cooldown_days() -> int:
         return max(0, int(raw))
     except (TypeError, ValueError):
         return DEFAULT_COOLDOWN_DAYS
+
+
+def load_patterns() -> list[str]:
+    """The closed enum of classifier labels + the render order for
+    patterns-coverage.md. Config-driven so users can add niche patterns
+    (Union Find, Line Sweep, Segment Tree…) or trim to fewer buckets.
+    Empty/malformed → falls back to DEFAULT_PATTERNS."""
+    raw = _load_config().get('patterns')
+    if not isinstance(raw, list):
+        return list(DEFAULT_PATTERNS)
+    seen: set[str] = set()
+    result: list[str] = []
+    for item in raw:
+        if not isinstance(item, str):
+            continue
+        label = item.strip()
+        if label and label not in seen:
+            seen.add(label)
+            result.append(label)
+    return result or list(DEFAULT_PATTERNS)
 
 
 def open_db() -> sqlite3.Connection:
@@ -110,14 +138,26 @@ def upsert_problem(
 # ── attempts ────────────────────────────────────────────────────────────────
 
 def start_attempt(conn: sqlite3.Connection, number: int) -> int:
-    """Open a new in-progress attempt for the problem. Returns attempt id."""
+    """Open a new in-progress attempt for the problem. Returns attempt id.
+
+    Real users put minutes between attempts, but tools and tests can fire
+    scaffold→done→retry within the same wall-clock second — colliding with
+    the `(problem_number, started_at)` UNIQUE constraint. On collision we
+    bump `started_at` by a second and retry; the constraint stays meaningful
+    (no two attempts at the literal same instant) without making the tools
+    flaky.
+    """
     now = int(time.time())
-    cur = conn.execute(
-        'INSERT INTO attempts (problem_number, started_at, duration_minutes, revisit) '
-        'VALUES (?, ?, NULL, 0)',
-        (number, now),
-    )
-    return cur.lastrowid
+    while True:
+        try:
+            cur = conn.execute(
+                'INSERT INTO attempts (problem_number, started_at, duration_minutes, revisit) '
+                'VALUES (?, ?, NULL, 0)',
+                (number, now),
+            )
+            return cur.lastrowid
+        except sqlite3.IntegrityError:
+            now += 1
 
 
 def latest_open_attempt(conn: sqlite3.Connection, number: int) -> tuple[int, int] | None:
@@ -198,9 +238,49 @@ def sync_config(conn: sqlite3.Connection) -> None:
 
 # ── reiteration (shared by /leetcode-new and /leetcode-retry) ───────────────
 
+def strip_solution_body(code: str, language_name: str) -> str:
+    """Reduce algorithmic-solution code to declarations only — every
+    function/class/method/type signature is kept, every body is emptied —
+    by shelling out to the `claude` CLI. The user gets back a fresh
+    template they can re-solve into without re-looking-up the LC judge
+    signature.
+
+    Returns:
+      - the stripped code on success
+      - an empty string on any failure (claude unavailable, timeout, JSON
+        nonsense, empty input). Callers wipe the file when this returns
+        empty, matching the pre-feature behaviour.
+    """
+    if not code.strip():
+        return ''
+    if subprocess.run(['which', 'claude'], capture_output=True).returncode != 0:
+        return ''
+    prompt = (
+        f'Strip the implementation from this {language_name} LeetCode solution. '
+        f'Keep every function, class, method, and type declaration intact, but '
+        f'replace each body with an empty body. Preserve original indentation. '
+        f'Reply with ONLY the stripped code — no markdown fence, no commentary, '
+        f'no explanation.\n\n{code}'
+    )
+    try:
+        result = subprocess.run(
+            ['claude', '-p', prompt],
+            capture_output=True, text=True, timeout=60,
+        )
+    except (subprocess.TimeoutExpired, OSError):
+        return ''
+    out = (result.stdout or '').strip()
+    # Defensively strip a surrounding markdown fence if Claude added one.
+    fence = re.match(r'^```[a-zA-Z]*\n(.*?)\n```\s*$', out, re.DOTALL)
+    if fence:
+        out = fence.group(1).strip()
+    return out
+
+
 def prepare_retry(conn: sqlite3.Connection, number: int) -> Path:
-    """Truncate the existing solution file and (for algorithmic problems)
-    open a new in-progress attempt. Returns the solution path.
+    """Reset the existing solution file for a fresh solve and (for
+    algorithmic problems) open a new in-progress attempt. Returns the
+    solution path.
 
     Used by both /leetcode-new (reiteration path, when the URL resolves to
     a problem folder whose solution already has content) and /leetcode-retry
@@ -210,6 +290,12 @@ def prepare_retry(conn: sqlite3.Connection, number: int) -> Path:
     The solution file is discovered by globbing `solution.*` in the problem
     folder — keeps us correct even if the language extension changed in
     config.json since the last solve.
+
+    Reset behaviour:
+      - algorithmic — try to keep declarations (function/class/method
+        signatures) via `strip_solution_body`. Fallback to a full wipe if
+        the classifier path is unavailable.
+      - SQL — always wipe; SQL solutions are queries with no signature.
     """
     row = conn.execute(
         'SELECT difficulty, kind, folder FROM problems WHERE number = ?',
@@ -227,9 +313,15 @@ def prepare_retry(conn: sqlite3.Connection, number: int) -> Path:
             f'found {[c.name for c in candidates]}'
         )
     sfile = candidates[0]
-    sfile.write_text('')
+
     if kind == 'algorithmic':
+        existing = sfile.read_text()
+        stripped = strip_solution_body(existing, load_language()['name'])
+        sfile.write_text(stripped if stripped else '')
         start_attempt(conn, number)
+    else:
+        sfile.write_text('')
+
     return sfile
 
 
