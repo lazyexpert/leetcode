@@ -83,7 +83,6 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2026-02-01 | 496 | [Next Greater Element I](src/Easy/496.Next_Greater_Element_I) | Easy | stale |
 | 2026-02-01 | 503 | [Next Greater Element II](src/Medium/503.Next_Greater_Element_II) | Medium | stale |
 | 2026-02-01 | 509 | [Fibonacci Number](src/Easy/509.Fibonacci_Number) | Easy | stale |
-| 2018-04-01 | 535 | [Encode and Decode tinyURL](src/Medium/535.Encode_And_Decode_TinyURL) | Medium | stale |
 | 2026-03-01 | 561 | [Array Partition](src/Easy/561.Array_Partition) | Easy | stale |
 | 2026-02-01 | 581 | [Shortest Unsorted Continuous Subarray](src/Medium/581.Shortest_Unsorted_Continuous_Subarray) | Medium | stale |
 | 2026-03-01 | 599 | [Minimum Index Sum of Two Lists](src/Easy/599.Minimum_Index_Sum_of_Two_Lists) | Easy | stale |

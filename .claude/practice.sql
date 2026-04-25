@@ -97,7 +97,7 @@ INSERT INTO problems VALUES(496,'Next Greater Element I','Easy','algorithmic','4
 INSERT INTO problems VALUES(503,'Next Greater Element II','Medium','algorithmic','503.Next_Greater_Element_II',1769904000);
 INSERT INTO problems VALUES(509,'Fibonacci Number','Easy','algorithmic','509.Fibonacci_Number',1769904000);
 INSERT INTO problems VALUES(511,'Game Play Analysis I',NULL,'sql','511.Game_Play_Analysis_I',1775001600);
-INSERT INTO problems VALUES(535,'Encode and Decode tinyURL','Medium','algorithmic','535.Encode_And_Decode_TinyURL',1522540800);
+INSERT INTO problems VALUES(535,'Encode And Decode TinyURL','Medium','algorithmic','535.Encode_And_Decode_TinyURL',1522540800);
 INSERT INTO problems VALUES(561,'Array Partition','Easy','algorithmic','561.Array_Partition',1772323200);
 INSERT INTO problems VALUES(577,'Employee Bonus',NULL,'sql','577.Employee_Bonus',1775001600);
 INSERT INTO problems VALUES(581,'Shortest Unsorted Continuous Subarray','Medium','algorithmic','581.Shortest_Unsorted_Continuous_Subarray',1769904000);
@@ -340,6 +340,7 @@ INSERT INTO attempts VALUES(159,596,1775001600,NULL,0);
 INSERT INTO attempts VALUES(160,455,1777113378,13,0);
 INSERT INTO attempts VALUES(161,118,1777114459,8,0);
 INSERT INTO attempts VALUES(162,28,1777115234,13,1);
+INSERT INTO attempts VALUES(163,535,1777119809,26,0);
 CREATE TABLE patterns (
   problem_number INTEGER NOT NULL REFERENCES problems(number) ON DELETE CASCADE,
   pattern        TEXT NOT NULL,
@@ -429,7 +430,6 @@ INSERT INTO patterns VALUES(389,'Hash Map / Hash Set',1522540800);
 INSERT INTO patterns VALUES(409,'Hash Map / Hash Set',1772323200);
 INSERT INTO patterns VALUES(448,'Hash Map / Hash Set',1767225600);
 INSERT INTO patterns VALUES(496,'Hash Map / Hash Set',1769904000);
-INSERT INTO patterns VALUES(535,'Hash Map / Hash Set',1522540800);
 INSERT INTO patterns VALUES(599,'Hash Map / Hash Set',1772323200);
 INSERT INTO patterns VALUES(645,'Hash Map / Hash Set',1767225600);
 INSERT INTO patterns VALUES(657,'Hash Map / Hash Set',1519862400);
@@ -500,7 +500,6 @@ INSERT INTO patterns VALUES(6,'Design / Simulation',1767225600);
 INSERT INTO patterns VALUES(155,'Design / Simulation',1519862400);
 INSERT INTO patterns VALUES(208,'Design / Simulation',1519862400);
 INSERT INTO patterns VALUES(463,'Design / Simulation',1519862400);
-INSERT INTO patterns VALUES(535,'Design / Simulation',1522540800);
 INSERT INTO patterns VALUES(636,'Design / Simulation',1767225600);
 INSERT INTO patterns VALUES(657,'Design / Simulation',1519862400);
 INSERT INTO patterns VALUES(703,'Design / Simulation',1772323200);
@@ -522,6 +521,8 @@ INSERT INTO patterns VALUES(455,'Two Pointers',1777114154);
 INSERT INTO patterns VALUES(455,'Sorting',1777114154);
 INSERT INTO patterns VALUES(118,'Dynamic Programming',1777114955);
 INSERT INTO patterns VALUES(28,'Sliding Window',1777116003);
+INSERT INTO patterns VALUES(535,'Design / Simulation',1777121366);
+INSERT INTO patterns VALUES(535,'Hash Map / Hash Set',1777121366);
 CREATE TABLE thresholds (
   difficulty TEXT PRIMARY KEY,             -- 'Easy' | 'Medium' | 'Hard'
   minutes    INTEGER NOT NULL

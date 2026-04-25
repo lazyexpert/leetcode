@@ -8,3 +8,4 @@ Retry thresholds (configurable in `config.json`): Easy ≥ 15 min · Medium ≥ 
 | 28 | [Find the Index of the First Occurrence in a String](src/Easy/28.Find_the_Index_of_the_First_Occurrence_in_a_String) | Easy | 2026-04-25 | 13 |
 | 118 | [Pascal's Triangle](src/Easy/118.Pascal's_Triangle) | Easy | 2026-04-25 | 8 |
 | 455 | [Assign Cookies](src/Easy/455.Assign_Cookies) | Easy | 2026-04-25 | 13 |
+| 535 | [Encode And Decode TinyURL](src/Medium/535.Encode_And_Decode_TinyURL) | Medium | 2026-04-25 | 26 |

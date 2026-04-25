@@ -131,7 +131,7 @@
 - [421. Find Maximum XOR Of Two Numbers In Array](src/Medium/421.Find_Maximum_XOR)
 - [456. 132 Pattern](src/Medium/456.132_Pattern)
 - [503. Next Greater Element II](src/Medium/503.Next_Greater_Element_II)
-- [535. Encode and Decode tinyURL](src/Medium/535.Encode_And_Decode_TinyURL)
+- [535. Encode And Decode TinyURL](src/Medium/535.Encode_And_Decode_TinyURL)
 - [581. Shortest Unsorted Continuous Subarray](src/Medium/581.Shortest_Unsorted_Continuous_Subarray)
 - [636. Exclusive Time of Functions](src/Medium/636.Exclusive_Time_of_Functions)
 - [654. Maximum Binary Tree](src/Medium/654.Maximum_Binary_Tree)
