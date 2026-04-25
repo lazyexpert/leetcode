@@ -5,4 +5,5 @@ Retry thresholds (configurable in `config.json`): Easy ≥ 15 min · Medium ≥ 
 
 | # | Problem | Difficulty | Date | Minutes |
 |---|---------|------------|------|---------|
+| 118 | [Pascal's Triangle](src/Easy/118.Pascal's_Triangle) | Easy | 2026-04-25 | 8 |
 | 455 | [Assign Cookies](src/Easy/455.Assign_Cookies) | Easy | 2026-04-25 | 13 |

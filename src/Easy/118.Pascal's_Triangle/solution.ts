@@ -1,16 +1,14 @@
 function generate(numRows: number): number[][] {
-  const result = new Array<number[]>(numRows);
-  // Init memory + insert ones as initial value
-  for (let i = 0; i < result.length; i++) {
-    result[i] = new Array<number>(i + 1).fill(1);
-  }
-  for (let i = 2; i < result.length; i++) {
-    for (let j = 1; j < i; j++) {
-      result[i][j] = result[i-1][j] + result[i-1][j-1];
+  let result = new Array<number[]>(numRows);
+  let length = 1;
+  while (numRows--) {
+    let arr = new Array(length).fill(1);
+    result[length-1] = arr;
+    for (let i = 1; i < arr.length - 1; i++) {
+      arr[i] = result[length-2][i-1] + result[length-2][i];
     }
+    length++;
   }
 
   return result;
 };
-
-generate(5);

@@ -338,6 +338,7 @@ INSERT INTO attempts VALUES(157,586,1775001600,NULL,0);
 INSERT INTO attempts VALUES(158,595,1775001600,NULL,0);
 INSERT INTO attempts VALUES(159,596,1775001600,NULL,0);
 INSERT INTO attempts VALUES(160,455,1777113378,13,0);
+INSERT INTO attempts VALUES(161,118,1777114459,8,0);
 CREATE TABLE patterns (
   problem_number INTEGER NOT NULL REFERENCES problems(number) ON DELETE CASCADE,
   pattern        TEXT NOT NULL,
@@ -403,7 +404,6 @@ INSERT INTO patterns VALUES(994,'BFS / DFS',1772323200);
 INSERT INTO patterns VALUES(1654,'BFS / DFS',1772323200);
 INSERT INTO patterns VALUES(5,'Dynamic Programming',1767225600);
 INSERT INTO patterns VALUES(70,'Dynamic Programming',1769904000);
-INSERT INTO patterns VALUES(118,'Dynamic Programming',1769904000);
 INSERT INTO patterns VALUES(119,'Dynamic Programming',1769904000);
 INSERT INTO patterns VALUES(509,'Dynamic Programming',1769904000);
 INSERT INTO patterns VALUES(55,'Greedy',1769904000);
@@ -520,6 +520,7 @@ INSERT INTO patterns VALUES(2022,'Design / Simulation',1772323200);
 INSERT INTO patterns VALUES(455,'Greedy',1777114154);
 INSERT INTO patterns VALUES(455,'Two Pointers',1777114154);
 INSERT INTO patterns VALUES(455,'Sorting',1777114154);
+INSERT INTO patterns VALUES(118,'Dynamic Programming',1777114955);
 CREATE TABLE thresholds (
   difficulty TEXT PRIMARY KEY,             -- 'Easy' | 'Medium' | 'Hard'
   minutes    INTEGER NOT NULL

@@ -38,7 +38,6 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2026-02-01 | 84 | [Largest Rectangle in Histogram](src/Hard/84.Largest_Rectangle_in_Histogram) | Hard | stale |
 | 2026-03-01 | 100 | [Same Tree](src/Easy/100.Same_Tree) | Easy | stale |
 | 2026-02-01 | 110 | [Balanced Binary Tree](src/Easy/110.Balanced_Binary_Tree) | Easy | stale |
-| 2026-02-01 | 118 | [Pascal's Triangle](src/Easy/118.Pascal's_Triangle) | Easy | stale |
 | 2026-02-01 | 119 | [Pascal's Triangle II](src/Easy/119.Pascal's_Triangle_II) | Easy | stale |
 | 2026-02-01 | 121 | [Best Time to Buy and Sell Stock](src/Easy/121.Best_Time_to_Buy_and_Sell_Stock) | Easy | stale |
 | 2026-03-01 | 125 | [Valid Palindrome](src/Easy/125.Valid_Palindrome) | Easy | stale |

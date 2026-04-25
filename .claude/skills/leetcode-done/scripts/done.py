@@ -223,12 +223,25 @@ def main() -> int:
                 attempt_id, _ = open_attempt
 
             duration = db.complete_attempt(conn, attempt_id, revisit=bool(revisit))
-            print(f'  ⏱ {number}. {title}: {duration} min')
+
+            threshold_row = conn.execute(
+                'SELECT minutes FROM thresholds WHERE difficulty = ?', (difficulty,)
+            ).fetchone()
+            threshold = threshold_row[0] if threshold_row else None
+            if threshold is None:
+                print(f'  ⏱ timing:     {duration} min')
+            elif duration < threshold:
+                print(f'  ✓ timing:     {duration} min  (within {difficulty} threshold of {threshold} min)')
+            else:
+                print(f'  ⚠ timing:     {duration} min  (over {difficulty} threshold of {threshold} min)')
 
             if patterns:
                 db.replace_patterns(conn, number, patterns)
-                flag = ' + revisit ⚠' if revisit else ''
-                print(f'  ✓ {number}. {title} → {patterns}{flag}')
+                print(f'  ✓ patterns:   {", ".join(patterns)}')
+                if revisit:
+                    print(f'  ⚠ complexity: classifier flagged a better solution exists')
+                else:
+                    print(f'  ✓ complexity: optimal')
 
     # ── Phase 2: regenerate views, dump SQL ─────────────────────────────────
     render.render_all(conn, REPO)
