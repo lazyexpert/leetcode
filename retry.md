@@ -23,7 +23,7 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2026-03-01 | 19 | [Remove Nth Node From End of List](src/Medium/19.Remove_Nth_Node_From_End_of_List) | Medium | complexity+stale |
 | 2018-03-01 | 20 | [Valid Parentheses](src/Easy/20.Valid_Parentheses) | Easy | stale |
 | 2026-03-01 | 21 | [Merge Two Sorted Lists](src/Easy/21.Merge_Two_Sorted_Lists) | Easy | stale |
-| 2026-01-01 | 28 | [Find the Index of the First Occurrence in a String](src/Easy/28.Find_the_Index_of_the_First_Occurrence_in_a_String) | Easy | stale |
+| 2026-04-25 | 28 | [Find the Index of the First Occurrence in a String](src/Easy/28.Find_the_Index_of_the_First_Occurrence_in_a_String) | Easy | complexity |
 | 2026-03-01 | 33 | [Search in Rotated Sorted Array](src/Medium/33.Search_in_Rotated_Sorted_Array) | Medium | complexity+stale |
 | 2026-03-01 | 35 | [Search Insert Position](src/Easy/35.Search_Insert_Position) | Easy | stale |
 | 2026-03-01 | 39 | [Combination Sum](src/Medium/39.Combination_Sum) | Medium | stale |

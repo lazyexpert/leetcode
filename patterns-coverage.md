@@ -5,7 +5,6 @@
 - [15. 3Sum](src/Medium/15.3Sum)
 - [16. 3Sum Closest](src/Medium/16.3Sum_Closest)
 - [19. Remove Nth Node From End of List](src/Medium/19.Remove_Nth_Node_From_End_of_List)
-- [28. Find the Index of the First Occurrence in a String](src/Easy/28.Find_the_Index_of_the_First_Occurrence_in_a_String)
 - [125. Valid Palindrome](src/Easy/125.Valid_Palindrome)
 - [141. Linked List Cycle](src/Easy/141.Linked_List_Cycle)
 - [151. Reverse Words in a String](src/Medium/151.Reverse_Words_in_a_String)
@@ -23,6 +22,7 @@
 
 ## Sliding Window
 - [3. Longest Substring Without Repeating Characters](src/Medium/3.Longest_Substring_Without_Repeating_Characters)
+- [28. Find the Index of the First Occurrence in a String](src/Easy/28.Find_the_Index_of_the_First_Occurrence_in_a_String)
 - [485. Max Consecutive Ones](src/Easy/485.Max_Consecutive_Ones)
 - [713. Subarray Product Less Than K](src/Medium/713.Subarray_Product_Less_Than_K)
 - [3325. Count Substrings With K-Frequency Characters I](src/Medium/3325.Count_Substrings_With_K-Frequency_Characters_I)
