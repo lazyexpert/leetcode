@@ -76,6 +76,14 @@ If the target problem folder already has a non-empty solution file, the skill ru
 
 Premium problems cannot be fetched from the public GraphQL endpoint; the skill reports this and exits. There is no paste fallback.
 
+## Aborting an in-progress attempt
+
+```
+/leetcode-abort
+```
+
+`scripts/abort.py` finds the latest in-progress `attempts` row (`duration_minutes IS NULL`), drops it, and depending on attempt history either rolls the problem back entirely (sole attempt — fresh /leetcode-new that's been abandoned) or restores the solution file from `HEAD` (prior committed attempts exist — typical /leetcode-retry abandonment). Re-renders views and refreshes the SQL dump. Does **not** commit. The `git checkout HEAD -- <path>` step is destructive on uncommitted edits in the affected file.
+
 ## Retrying a problem
 
 ```
@@ -108,7 +116,8 @@ If only `config.json` is modified (no solution), `/leetcode-done` re-syncs thres
 | `/leetcode-new` on an existing problem with content | `scaffold.py` reiteration path | Truncates solution file + opens a new `attempts` row (history preserved) + renders views + dumps SQL |
 | `/leetcode-done` with a modified solution file | `done.py` | Closes the attempt (sets `duration_minutes` + `revisit`), replaces `patterns` rows, renders views, dumps SQL, `git add .` + `git commit` |
 | `/leetcode-done` with modified `config.json` | `done.py` | Upserts thresholds + cooldown; view recomputes on next render. Commits with message `tune retry thresholds` if no solution is also modified |
-| `/leetcode-retry` | `retry.py` | Picks a random `stale = 1` algorithmic problem, truncates its solution file, opens a new `attempts` row, renders views, dumps SQL. Does **not** commit. |
+| `/leetcode-retry` | `retry.py` | Picks a random `stale = 1` algorithmic problem (or an explicit one if a number is passed), strips body to a signature template, opens a new `attempts` row, renders views, dumps SQL. Does **not** commit. |
+| `/leetcode-abort` | `abort.py` | Drops the latest in-progress attempt. Sole-attempt → rolls back the problem entirely; otherwise restores the solution file from `HEAD`. Re-renders views, dumps SQL. Does **not** commit. |
 
 ## Project documentation
 
@@ -132,4 +141,6 @@ If only `config.json` is modified (no solution), `/leetcode-done` re-syncs thres
 | [`.claude/skills/leetcode-done/scripts/render.py`](.claude/skills/leetcode-done/scripts/render.py) | Renders all five Markdown views from the DB |
 | [`.claude/skills/leetcode-done/scripts/migrate.py`](.claude/skills/leetcode-done/scripts/migrate.py) | One-shot migrator — bootstraps the DB from pre-existing MD state |
 | [`.claude/skills/leetcode-retry/SKILL.md`](.claude/skills/leetcode-retry/SKILL.md) | Skill definition powering `/leetcode-retry`, `/lc-retry`, `/leet-retry` |
-| [`.claude/skills/leetcode-retry/scripts/retry.py`](.claude/skills/leetcode-retry/scripts/retry.py) | Picks a random retry candidate and preps it (shares `db.prepare_retry` with scaffold.py) |
+| [`.claude/skills/leetcode-retry/scripts/retry.py`](.claude/skills/leetcode-retry/scripts/retry.py) | Picks a retry candidate (random or explicit) and preps it (shares `db.prepare_retry` with scaffold.py) |
+| [`.claude/skills/leetcode-abort/SKILL.md`](.claude/skills/leetcode-abort/SKILL.md) | Skill definition powering `/leetcode-abort`, `/lc-abort`, `/leet-abort` |
+| [`.claude/skills/leetcode-abort/scripts/abort.py`](.claude/skills/leetcode-abort/scripts/abort.py) | Drops the latest in-progress attempt + restores or rolls back |

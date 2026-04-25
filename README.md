@@ -68,6 +68,21 @@ Push is intentionally left to you — batch multiple problems together or push i
 
 SQL solutions skip pattern classification and attempt timing, but still get scaffolded into the DB and committed with the same message format.
 
+### Abort an in-progress attempt
+
+```
+/leetcode-abort
+```
+
+Aliases: `/leetcode-abort`, `/lc-abort`, `/leet-abort`. Drops the latest in-progress `attempts` row and:
+
+- if it was the **sole** attempt on the problem (you just scaffolded a fresh one) → also drops the problem row + patterns + removes the folder.
+- otherwise → restores the solution file from `HEAD` via `git checkout`. Prior committed history acts as the safety net.
+
+Then re-renders the views and refreshes `practice.sql`. Does **not** commit — your working tree is whatever the abort left behind.
+
+⚠ Destructive on uncommitted edits in the affected solution file (the `git checkout` overwrites). Stash first if you have changes you want to keep.
+
 ### Retry a problem
 
 ```
@@ -154,7 +169,9 @@ When using Claude Code to discuss a problem you're actively solving, the skill a
 | [`.claude/skills/leetcode-done/scripts/render.py`](.claude/skills/leetcode-done/scripts/render.py) | Renders all five Markdown views from the DB |
 | [`.claude/skills/leetcode-done/scripts/migrate.py`](.claude/skills/leetcode-done/scripts/migrate.py) | One-shot migrator — used to bootstrap the DB from pre-existing MD state |
 | [`.claude/skills/leetcode-retry/SKILL.md`](.claude/skills/leetcode-retry/SKILL.md) | Skill entry point for `/leetcode-retry`, `/lc-retry`, `/leet-retry` |
-| [`.claude/skills/leetcode-retry/scripts/retry.py`](.claude/skills/leetcode-retry/scripts/retry.py) | Picks a random stale problem and preps it for reiteration (shares `db.prepare_retry` with scaffold.py) |
+| [`.claude/skills/leetcode-retry/scripts/retry.py`](.claude/skills/leetcode-retry/scripts/retry.py) | Picks a random stale problem (or an explicit one) and preps it for reiteration (shares `db.prepare_retry` with scaffold.py) |
+| [`.claude/skills/leetcode-abort/SKILL.md`](.claude/skills/leetcode-abort/SKILL.md) | Skill entry point for `/leetcode-abort`, `/lc-abort`, `/leet-abort` |
+| [`.claude/skills/leetcode-abort/scripts/abort.py`](.claude/skills/leetcode-abort/scripts/abort.py) | Drops the latest in-progress attempt, restores or rolls back, re-renders |
 | [`.claude/practice.sql`](.claude/practice.sql) | Git-tracked DB dump; rebuild `.claude/practice.db` from this |
 | [`config.json`](config.json) | Retry thresholds per difficulty |
 | [`progress.md`](progress.md) | View: problem index with per-difficulty counters |
