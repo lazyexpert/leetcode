@@ -102,7 +102,7 @@ Reason flags: `timing` — latest attempt exceeded the threshold · `complexity`
 | 2018-01-01 | 771 | [Jewels and Stones](src/Easy/771.Jewels_and_Stones) | Easy | stale |
 | 2026-03-01 | 852 | [Peak Index in a Mountain Array](src/Easy/852.Peak_Index_in_a_Mountain_Array) | Easy | stale |
 | 2026-02-01 | 853 | [Car Fleet](src/Medium/853.Car_Fleet) | Medium | stale |
-| 2026-03-01 | 860 | [Lemonade Change](src/Easy/860.Lemonade_Change) | Easy | stale |
+| 2026-04-25 | 860 | [Lemonade Change](src/Easy/860.Lemonade_Change) | Easy | timing |
 | 2026-02-01 | 901 | [Online Stock Span](src/Medium/901.Online_Stock_Span) | Medium | stale |
 | 2026-03-01 | 965 | [Univalued Binary Tree](src/Easy/965.Univalued_Binary_Tree) | Easy | stale |
 | 2026-03-01 | 994 | [Rotting Oranges](src/Medium/994.Rotting_Oranges) | Medium | stale |

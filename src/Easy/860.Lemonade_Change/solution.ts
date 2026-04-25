@@ -1,30 +1,31 @@
 function lemonadeChange(bills: number[]): boolean {
-  let fives = 0;
-  let tens = 0;
+  let balance = {
+    5: 0,
+    10: 0, 
+    20: 0
+  };
 
-  for (const bill of bills) {
-    const change = bill - 5;
-    if (change === 5) {
-      if (fives === 0) return false;
-      fives--;
-    } else if (change === 15) {
-      if (tens > 0 && fives > 0) {
-        tens--;
-        fives--;
-      } else if (fives > 2) {
-        fives -= 3;
-      } else {
-        return false;
-      }
-    }
-    if (bill === 5) {
-      fives++;
+  for (let i = 0; i < bills.length; i ++) {
+    const bill = bills[i];
+    
+    if (bill === 20) {
+      let left = 15;
+      if (balance[10] >= 1) {
+        balance[10]--;
+        left = 5;
+      } 
+
+      balance[5] -= left / 5;
+      if (balance[5] < 0) return false;
+      balance[20]++;
     } else if (bill === 10) {
-      tens++;
+      balance[5]--;
+      if (balance[5] < 0) return false;
+      balance[10]++;
+    } else {
+      balance[5]++;
     }
   }
 
   return true;
 };
-
-lemonadeChange([5,5,10,10,20]);
