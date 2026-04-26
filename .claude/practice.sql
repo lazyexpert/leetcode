@@ -538,6 +538,8 @@ CREATE TABLE settings (
   value TEXT NOT NULL
 );
 INSERT INTO settings VALUES('review_cooldown_days','7');
+INSERT INTO settings VALUES('schema_version','0');
+INSERT INTO settings VALUES('plugin_version_seen','0.1.1');
 CREATE INDEX attempts_by_problem
   ON attempts(problem_number, started_at);
 CREATE INDEX patterns_by_pattern

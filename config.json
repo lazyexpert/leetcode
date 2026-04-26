@@ -9,6 +9,7 @@
     "Hard": 60
   },
   "review_cooldown_days": 7,
+  "pick_retry_ratio": 0.0,
   "patterns": [
     "Two Pointers",
     "Sliding Window",

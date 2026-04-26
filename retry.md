@@ -1,7 +1,7 @@
 # Retry List
 
 Algorithmic problems eligible for revisit, derived from the `retry_flags` view
-every render. `/leetcode-retry` picks a random entry from this list.
+every render. `/leetcode-workflow:retry` picks a random entry from this list.
 
 Reason flags: `timing` — latest attempt exceeded the threshold · `complexity` — classifier flagged a better solution exists · `stale` — cooldown (see `config.json: review_cooldown_days`) has elapsed. Combinations are joined with `+`.
 
