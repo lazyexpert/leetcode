@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 22     |
-| **Total**  | **160** |
+| SQL        | 23     |
+| **Total**  | **161** |
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum)
@@ -162,6 +162,7 @@
 - [196. Delete Duplicate Emails](src/SQL/196.Delete_Duplicate_Emails)
 - [197. Rising Temperature](src/SQL/197.Rising_Temperature)
 - [511. Game Play Analysis I](src/SQL/511.Game_Play_Analysis_I)
+- [570. Managers with at Least 5 Direct Reports](src/SQL/570.Managers_with_at_Least_5_Direct_Reports)
 - [577. Employee Bonus](src/SQL/577.Employee_Bonus)
 - [584. Find Customer Referee](src/SQL/584.Find_Customer_Referee)
 - [586. Customer Placing the Largest Number of Orders](src/SQL/586.Customer_Placing_the_Largest_Number_of_Orders)

@@ -99,6 +99,7 @@ INSERT INTO problems VALUES(509,'Fibonacci Number','Easy','algorithmic','509.Fib
 INSERT INTO problems VALUES(511,'Game Play Analysis I',NULL,'sql','511.Game_Play_Analysis_I',1775001600);
 INSERT INTO problems VALUES(535,'Encode And Decode TinyURL','Medium','algorithmic','535.Encode_And_Decode_TinyURL',1522540800);
 INSERT INTO problems VALUES(561,'Array Partition','Easy','algorithmic','561.Array_Partition',1772323200);
+INSERT INTO problems VALUES(570,'Managers with at Least 5 Direct Reports',NULL,'sql','570.Managers_with_at_Least_5_Direct_Reports',1777299773);
 INSERT INTO problems VALUES(577,'Employee Bonus',NULL,'sql','577.Employee_Bonus',1775001600);
 INSERT INTO problems VALUES(581,'Shortest Unsorted Continuous Subarray','Medium','algorithmic','581.Shortest_Unsorted_Continuous_Subarray',1769904000);
 INSERT INTO problems VALUES(584,'Find Customer Referee',NULL,'sql','584.Find_Customer_Referee',1775001600);
