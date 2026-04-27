@@ -5,8 +5,8 @@
 | Easy       | 83     |
 | Medium     | 54     |
 | Hard       | 1      |
-| SQL        | 21     |
-| **Total**  | **159** |
+| SQL        | 22     |
+| **Total**  | **160** |
 
 ## Easy
 - [1. Two Sum](src/Easy/1.Two_Sum)
@@ -169,6 +169,7 @@
 - [596. Classes With at Least 5 Students](src/SQL/596.Classes_With_at_Least_5_Students)
 - [1068. Product Sales Analysis I](src/SQL/1068.Product_Sales_Analysis_I)
 - [1148. Article Views I](src/SQL/1148.Article_Views_I)
+- [1280. Students and Examinations](src/SQL/1280.Students_and_Examinations)
 - [1378. Replace Employee ID With The Unique Identifier](src/SQL/1378.Replace_Employee_ID_With_The_Unique_Identifier)
 - [1581. Customer Who Visited but Did Not Make Any Transactions](src/SQL/1581.Customer_Who_Visited_but_Did_Not_Make_Any_Transactions)
 - [1661. Average Time of Process per Machine](src/SQL/1661.Average_Time_of_Process_per_Machine)

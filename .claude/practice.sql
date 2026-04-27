@@ -132,6 +132,7 @@ INSERT INTO problems VALUES(1068,'Product Sales Analysis I',NULL,'sql','1068.Pro
 INSERT INTO problems VALUES(1071,'Greatest Common Divisor of Strings','Easy','algorithmic','1071.Greatest_Common_Divisor_of_Strings',1767225600);
 INSERT INTO problems VALUES(1114,'Print in Order','Easy','algorithmic','1114.Print_in_Order',1769904000);
 INSERT INTO problems VALUES(1148,'Article Views I',NULL,'sql','1148.Article_Views_I',1775001600);
+INSERT INTO problems VALUES(1280,'Students and Examinations',NULL,'sql','1280.Students_and_Examinations',1777295759);
 INSERT INTO problems VALUES(1356,'Sort Integers by The Number of 1 Bits','Easy','algorithmic','1356.Sort_Integers_by_The_Number_of_1_Bits',1769904000);
 INSERT INTO problems VALUES(1365,'How Many Numbers Are Smaller Than the Current Number','Easy','algorithmic','1365.How_Many_Numbers_Are_Smaller_Than_the_Current_Number',1767225600);
 INSERT INTO problems VALUES(1378,'Replace Employee ID With The Unique Identifier',NULL,'sql','1378.Replace_Employee_ID_With_The_Unique_Identifier',1775001600);
